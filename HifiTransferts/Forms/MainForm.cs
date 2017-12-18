@@ -7,14 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HifiTransferts.DTO;
+using HifiTransferts.DAL;
 
 namespace HifiTransferts.Forms
 {
     public partial class MainForm : Form
     {
+        TransfertProvider transfertProvider = new TransfertProvider();
+
         public MainForm()
         {
             InitializeComponent();
+            TransfertsForm frm = new TransfertsForm();
+            frm.MdiParent = this;
+            frm.Show();
+
+            transfertProvider.CountAll();
+        }
+
+        private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
