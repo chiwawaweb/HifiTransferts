@@ -43,7 +43,7 @@
             this.dgvTransferts.Location = new System.Drawing.Point(0, 35);
             this.dgvTransferts.Name = "dgvTransferts";
             this.dgvTransferts.ReadOnly = true;
-            this.dgvTransferts.Size = new System.Drawing.Size(813, 455);
+            this.dgvTransferts.Size = new System.Drawing.Size(813, 462);
             this.dgvTransferts.TabIndex = 0;
             // 
             // TransfertsListForm
@@ -53,7 +53,7 @@
             this.ClientSize = new System.Drawing.Size(813, 497);
             this.ControlBox = false;
             this.Controls.Add(this.dgvTransferts);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TransfertsListForm";

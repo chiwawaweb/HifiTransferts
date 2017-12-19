@@ -40,18 +40,20 @@
             this.miseÀJourToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.aProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtnAdd = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip
             // 
             this.toolStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.toolStrip.Location = new System.Drawing.Point(0, 21);
+            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.BtnAdd});
+            this.toolStrip.Location = new System.Drawing.Point(0, 24);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(722, 18);
+            this.toolStrip.Size = new System.Drawing.Size(722, 31);
             this.toolStrip.TabIndex = 0;
-            this.toolStrip.Text = "toolStrip1";
-            this.toolStrip.Visible = false;
             // 
             // statusStrip
             // 
@@ -131,6 +133,15 @@
             this.aProposToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.aProposToolStripMenuItem.Text = "A propos";
             // 
+            // BtnAdd
+            // 
+            this.BtnAdd.Image = ((System.Drawing.Image)(resources.GetObject("BtnAdd.Image")));
+            this.BtnAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnAdd.Name = "BtnAdd";
+            this.BtnAdd.Size = new System.Drawing.Size(154, 28);
+            this.BtnAdd.Text = "Demander un transfert";
+            this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -142,10 +153,12 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.Text = "Hifi Transferts";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.toolStrip.ResumeLayout(false);
+            this.toolStrip.PerformLayout();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -166,5 +179,6 @@
         private System.Windows.Forms.ToolStripMenuItem miseÀJourToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem aProposToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton BtnAdd;
     }
 }

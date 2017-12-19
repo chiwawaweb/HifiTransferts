@@ -30,5 +30,16 @@ namespace HifiTransferts.Forms
         {
             Application.Exit();
         }
+
+        private void BtnAdd_Click(object sender, EventArgs e)
+        {
+            NewTransfert();
+        }
+
+        private void NewTransfert()
+        {
+            TransfertNewForm frm = new TransfertNewForm();
+            frm.ShowDialog();
+        }
     }
 }
