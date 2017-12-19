@@ -16,6 +16,7 @@ namespace HifiTransferts.DAL
         }
 
         public DbSet<Transfert> Transferts { get; set; }
+        public DbSet<Agence> Agences { get; set; }
     }
 
     public class ContextInitializer : DropCreateDatabaseIfModelChanges<Context>

@@ -8,15 +8,17 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HifiTransferts.DTO
 {
-    public class Transfert
+    public class Agence
     {
         // data
         [Key]
         [Column("ID")]
         public int? Id { get; set; }
-        [Column("DATE")]
-        public DateTime Date { get; set; }
-        [Column("CREATED_AT")]
-        public DateTime CreatedAt { get; set; }
+        [Column("NUMERO")]
+        public int Numero { get; set; }
+        [Column("NOM")]
+        public string Nom { get; set; }
+        [Column("ACTIF")]
+        public bool Actif { get; set; }
     }
 }

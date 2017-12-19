@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="DAL\Context.cs" />
     <Compile Include="DAL\TransfertProvider.cs" />
+    <Compile Include="DTO\Agence.cs" />
     <Compile Include="DTO\Transfert.cs" />
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
