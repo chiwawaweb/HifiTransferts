@@ -17,5 +17,10 @@ namespace HifiTransferts.Forms
             InitializeComponent();
             //this.WindowState = MaximumSize();
         }
+
+        private void TransfertsListForm_Load(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Maximized;
+        }
     }
 }

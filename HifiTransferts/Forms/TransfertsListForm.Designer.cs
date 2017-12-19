@@ -28,22 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dgvTransferts = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTransferts)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dgvTransferts
+            // 
+            this.dgvTransferts.AllowUserToAddRows = false;
+            this.dgvTransferts.AllowUserToDeleteRows = false;
+            this.dgvTransferts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvTransferts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTransferts.Location = new System.Drawing.Point(0, 35);
+            this.dgvTransferts.Name = "dgvTransferts";
+            this.dgvTransferts.ReadOnly = true;
+            this.dgvTransferts.Size = new System.Drawing.Size(813, 455);
+            this.dgvTransferts.TabIndex = 0;
             // 
             // TransfertsListForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1219, 764);
+            this.ClientSize = new System.Drawing.Size(813, 497);
             this.ControlBox = false;
+            this.Controls.Add(this.dgvTransferts);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TransfertsListForm";
             this.Text = "TransfertsListForm";
+            this.Load += new System.EventHandler(this.TransfertsListForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTransferts)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dgvTransferts;
     }
 }
