@@ -61,6 +61,7 @@
     <Compile Include="DAL\Context.cs" />
     <Compile Include="DAL\TransfertProvider.cs" />
     <Compile Include="DTO\Agence.cs" />
+    <Compile Include="DTO\AgenceTransfert.cs" />
     <Compile Include="DTO\Transfert.cs" />
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
@@ -68,19 +69,19 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\TransfertsForm.cs">
+    <Compile Include="Forms\TransfertsListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\TransfertsForm.Designer.cs">
-      <DependentUpon>TransfertsForm.cs</DependentUpon>
+    <Compile Include="Forms\TransfertsListForm.Designer.cs">
+      <DependentUpon>TransfertsListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TransfertsForm.resx">
-      <DependentUpon>TransfertsForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\TransfertsListForm.resx">
+      <DependentUpon>TransfertsListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

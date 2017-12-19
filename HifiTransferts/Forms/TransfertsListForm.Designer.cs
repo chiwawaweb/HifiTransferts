@@ -1,6 +1,6 @@
 ﻿namespace HifiTransferts.Forms
 {
-    partial class TransfertsForm
+    partial class TransfertsListForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,20 +30,16 @@
         {
             this.SuspendLayout();
             // 
-            // TransfertsForm
+            // TransfertsListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(964, 711);
+            this.ClientSize = new System.Drawing.Size(1219, 764);
             this.ControlBox = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "TransfertsForm";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Transferts";
-            this.Load += new System.EventHandler(this.TransfertsForm_Load);
+            this.Name = "TransfertsListForm";
+            this.Text = "TransfertsListForm";
             this.ResumeLayout(false);
 
         }

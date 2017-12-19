@@ -19,7 +19,7 @@ namespace HifiTransferts.Forms
         public MainForm()
         {
             InitializeComponent();
-            TransfertsForm frm = new TransfertsForm();
+            TransfertsListForm frm = new TransfertsListForm();
             frm.MdiParent = this;
             frm.Show();
 
