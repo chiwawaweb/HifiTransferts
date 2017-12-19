@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace HifiTransferts.Forms
 {
-    public partial class TransfertsListForm : Form
+    public partial class TransfertNewForm : Form
     {
-        public TransfertsListForm()
+        public TransfertNewForm()
         {
             InitializeComponent();
-        }
-
-        private void TransfertsListForm_Load(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Maximized;
         }
     }
 }

@@ -18,7 +18,12 @@ namespace HifiTransferts.DTO
         public int Numero { get; set; }
         [Column("NOM")]
         public string Nom { get; set; }
+        [Column("EMAIL")]
+        public string Email { get; set; }
         [Column("ACTIF")]
         public bool Actif { get; set; }
+
+        // les articles du transfert
+        public ICollection<Article> articles { get; set; }
     }
 }
