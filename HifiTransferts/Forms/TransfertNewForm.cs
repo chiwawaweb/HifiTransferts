@@ -22,9 +22,7 @@ namespace HifiTransferts.Forms
             Close();
         }
 
-        private void TransfertNewForm_Load(object sender, EventArgs e)
-        {
 
-        }
+
     }
 }

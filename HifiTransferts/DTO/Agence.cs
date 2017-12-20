@@ -10,7 +10,6 @@ namespace HifiTransferts.DTO
 {
     public class Agence
     {
-        // data
         [Key]
         [Column("ID")]
         public int? Id { get; set; }
@@ -25,5 +24,11 @@ namespace HifiTransferts.DTO
 
         // les articles du transfert
         public ICollection<Transfert> transferts { get; set; }
+
+        /* Constructeur */
+        public Agence()
+        {
+            
+        }
     }
 }

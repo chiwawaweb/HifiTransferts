@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Agence.cs" />
     <Compile Include="DAL\Context.cs" />
     <Compile Include="DAL\TransfertProvider.cs" />
     <Compile Include="DTO\Agence.cs" />

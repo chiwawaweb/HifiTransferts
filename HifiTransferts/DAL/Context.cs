@@ -32,7 +32,7 @@ namespace HifiTransferts.DAL
                 new Agence { Numero=15, Nom="BELLE ETOILE", Email="hifi15@hifi.lu", Actif=true},
                 new Agence { Numero=19, Nom="POMMERLOCH", Email="hifi19@hifi.lu",Actif=true},
                 new Agence { Numero=26, Nom="CITY CONCORDE", Email="hifi26@hifi.lu",Actif=true},
-                new Agence { Numero=30, Nom="HOWALD", Email="hifi30@hifi.lu",Actif=true}
+                new Agence { Numero=30, Nom="HOWALD", Email="hifi30@hifi.lu",Actif=true},
                 new Agence { Numero=33, Nom="BETTEMBOURG", Email="hifi33@hifi.lu",Actif=true},
                 new Agence { Numero=34, Nom="BERTRANGE EM", Email="hifi34em@hifi.lu",Actif=true},
                 new Agence { Numero=34, Nom="BERTRANGE AV", Email="hifi34AV@hifi.lu",Actif=true},
