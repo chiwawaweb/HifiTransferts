@@ -21,16 +21,11 @@ namespace HifiTransferts.DTO
         [Column("REMARQUE")]
         public string Remarque { get; set; }
         [Required]
-        [Column("AGENCE_ID")]
-        public int AgenceId { get; set; }
-        [Required]
         [Column("TRANSFERT_ID")]
         public int TransfertId { get; set; }
         [Required]
         [ForeignKey("TransfertId")]
         public virtual Transfert Transferts { get; set; }
-        [Required]
-        [ForeignKey("TransfertId")]
-        public virtual Agence Agences { get; set; }
+        
     }
 }

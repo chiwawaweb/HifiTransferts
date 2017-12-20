@@ -24,6 +24,6 @@ namespace HifiTransferts.DTO
         public bool Actif { get; set; }
 
         // les articles du transfert
-        public ICollection<Article> articles { get; set; }
+        public ICollection<Transfert> transferts { get; set; }
     }
 }

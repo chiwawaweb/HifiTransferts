@@ -16,6 +16,9 @@ namespace HifiTransferts.DTO
         public int? Id { get; set; }
         [Column("DATE")]
         public DateTime Date { get; set; }
+        [Required]
+        [Column("AGENCE_ID")]
+        public int AgenceId { get; set; }
         [Column("CONTACT")]
         public string Contact { get; set; }
         [Column("REMARQUE")]
@@ -25,5 +28,8 @@ namespace HifiTransferts.DTO
 
         // les articles du transfert
         public ICollection<Article> articles { get; set; }
+        [Required]
+        [ForeignKey("AgenceId")]
+        public virtual Agence Agences { get; set; }
     }
 }
