@@ -28,12 +28,10 @@ namespace HifiTransferts.Forms
                 {
                     dataSource.Add(agence);
                 }
-
-               
             }
-            this.CbxAgence.DataSource = dataSource;
-            this.CbxAgence.DisplayMember = "FullName";
-            this.CbxAgence.ValueMember = "FullName";
+            CbxAgence.DataSource = dataSource;
+            CbxAgence.DisplayMember = "FullName";
+            CbxAgence.ValueMember = "FullName";
 
         }
 

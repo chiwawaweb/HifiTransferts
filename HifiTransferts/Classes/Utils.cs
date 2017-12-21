@@ -29,11 +29,6 @@ namespace HifiTransferts.Classes
             };
 
             return agences;
-
         }
-
-        
-
-
     }
 }

@@ -13,9 +13,6 @@ namespace HifiTransferts.Classes
         public string Email { get; set; }
         public bool Actif { get; set; }
 
-        public string FullName => $"{Numero} {Nom}";
-        
+        public string FullName => Numero.ToString("000") + $" - {Nom}";
     }
-
-    
 }
