@@ -14,9 +14,27 @@ namespace HifiTransferts.Forms
 {
     public partial class TransfertNewForm : Form
     {
+        Utils utils = new Utils();
+
         public TransfertNewForm()
         {
             InitializeComponent();
+
+            /* Combobox Agence */
+            var dataSource = new List<Agence>();
+            foreach (Agence agence in utils.AllAgencies())
+            {
+                if (agence.Actif == true)
+                {
+                    dataSource.Add(agence);
+                }
+
+               
+            }
+            this.CbxAgence.DataSource = dataSource;
+            this.CbxAgence.DisplayMember = "FullName";
+            this.CbxAgence.ValueMember = "FullName";
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -31,12 +49,9 @@ namespace HifiTransferts.Forms
 
         private void TransfertNewForm_Load(object sender, EventArgs e)
         {
-            Utils utils = new Utils();
+            
 
-            foreach (Agence agence in utils.AllAgencies())
-            {
-                MessageBox.Show(agence.Nom);
-            }
+            
 
             
 

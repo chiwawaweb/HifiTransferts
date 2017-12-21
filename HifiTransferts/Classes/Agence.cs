@@ -13,10 +13,8 @@ namespace HifiTransferts.Classes
         public string Email { get; set; }
         public bool Actif { get; set; }
 
-        public Agence()
-        {
-            
-        }
+        public string FullName => $"{Numero} {Nom}";
+        
     }
 
     

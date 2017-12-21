@@ -30,7 +30,7 @@
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CbxAgence = new System.Windows.Forms.ComboBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.BtnAdd = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -43,13 +43,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.TxtContact = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.TxtClient = new System.Windows.Forms.TextBox();
+            this.ChkStock = new System.Windows.Forms.CheckBox();
+            this.CbxVendeur = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,13 +67,13 @@
             this.textBox2.Size = new System.Drawing.Size(332, 26);
             this.textBox2.TabIndex = 1;
             // 
-            // comboBox1
+            // CbxAgence
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(238, 37);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(205, 28);
-            this.comboBox1.TabIndex = 2;
+            this.CbxAgence.FormattingEnabled = true;
+            this.CbxAgence.Location = new System.Drawing.Point(238, 37);
+            this.CbxAgence.Name = "CbxAgence";
+            this.CbxAgence.Size = new System.Drawing.Size(205, 28);
+            this.CbxAgence.TabIndex = 2;
             // 
             // textBox3
             // 
@@ -132,7 +132,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 128);
+            this.label1.Location = new System.Drawing.Point(24, 257);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 20);
@@ -189,13 +189,6 @@
             this.label6.TabIndex = 15;
             this.label6.Text = "Vendeur";
             // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(22, 37);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(208, 26);
-            this.textBox5.TabIndex = 14;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -206,12 +199,12 @@
             this.label7.TabIndex = 17;
             this.label7.Text = "Vu avec";
             // 
-            // textBox6
+            // TxtContact
             // 
-            this.textBox6.Location = new System.Drawing.Point(452, 37);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(208, 26);
-            this.textBox6.TabIndex = 16;
+            this.TxtContact.Location = new System.Drawing.Point(452, 37);
+            this.TxtContact.Name = "TxtContact";
+            this.TxtContact.Size = new System.Drawing.Size(208, 26);
+            this.TxtContact.TabIndex = 16;
             // 
             // button1
             // 
@@ -232,36 +225,44 @@
             this.label8.TabIndex = 20;
             this.label8.Text = "Client";
             // 
-            // textBox7
+            // TxtClient
             // 
-            this.textBox7.Location = new System.Drawing.Point(22, 94);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(208, 26);
-            this.textBox7.TabIndex = 19;
+            this.TxtClient.Location = new System.Drawing.Point(22, 94);
+            this.TxtClient.Name = "TxtClient";
+            this.TxtClient.Size = new System.Drawing.Size(208, 26);
+            this.TxtClient.TabIndex = 19;
             // 
-            // checkBox1
+            // ChkStock
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(238, 98);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(110, 24);
-            this.checkBox1.TabIndex = 21;
-            this.checkBox1.Text = "Pour stock";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.ChkStock.AutoSize = true;
+            this.ChkStock.Location = new System.Drawing.Point(238, 98);
+            this.ChkStock.Name = "ChkStock";
+            this.ChkStock.Size = new System.Drawing.Size(110, 24);
+            this.ChkStock.TabIndex = 21;
+            this.ChkStock.Text = "Pour stock";
+            this.ChkStock.UseVisualStyleBackColor = true;
+            // 
+            // CbxVendeur
+            // 
+            this.CbxVendeur.FormattingEnabled = true;
+            this.CbxVendeur.Location = new System.Drawing.Point(22, 35);
+            this.CbxVendeur.Name = "CbxVendeur";
+            this.CbxVendeur.Size = new System.Drawing.Size(205, 28);
+            this.CbxVendeur.TabIndex = 22;
             // 
             // TransfertNewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 806);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.CbxVendeur);
+            this.Controls.Add(this.ChkStock);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.TxtClient);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.TxtContact);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -273,7 +274,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BtnAdd);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.CbxAgence);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -295,7 +296,7 @@
 
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CbxAgence;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button BtnAdd;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -308,12 +309,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox TxtContact;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox TxtClient;
+        private System.Windows.Forms.CheckBox ChkStock;
+        private System.Windows.Forms.ComboBox CbxVendeur;
     }
 }
