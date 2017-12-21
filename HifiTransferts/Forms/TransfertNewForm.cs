@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HifiTransferts.Classes;
+using HifiTransferts;
 
 namespace HifiTransferts.Forms
 {
@@ -22,7 +24,22 @@ namespace HifiTransferts.Forms
             Close();
         }
 
+        private void AfficheAgences()
+        {
+            
+        }
 
+        private void TransfertNewForm_Load(object sender, EventArgs e)
+        {
+            Utils utils = new Utils();
 
+            foreach (Agence agence in utils.AllAgencies())
+            {
+                MessageBox.Show(agence.Nom);
+            }
+
+            
+
+        }
     }
 }

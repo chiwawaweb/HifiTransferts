@@ -12,5 +12,12 @@ namespace HifiTransferts.Classes
         public string Nom { get; set; }
         public string Email { get; set; }
         public bool Actif { get; set; }
+
+        public Agence()
+        {
+            
+        }
     }
+
+    
 }
