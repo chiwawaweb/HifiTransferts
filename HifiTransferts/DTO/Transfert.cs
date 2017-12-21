@@ -28,8 +28,6 @@ namespace HifiTransferts.DTO
 
         // les articles du transfert
         public ICollection<Article> articles { get; set; }
-        [Required]
-        [ForeignKey("AgenceId")]
-        public virtual Agence Agences { get; set; }
+
     }
 }

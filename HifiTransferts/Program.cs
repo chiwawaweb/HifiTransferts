@@ -18,12 +18,6 @@ namespace HifiTransferts
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Forms.MainForm());
-
-            
-
         }
-
-
-
     }
 }
