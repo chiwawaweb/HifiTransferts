@@ -15,7 +15,6 @@ namespace HifiTransferts.DAL
             Database.SetInitializer<Context>(new ContextInitializer());
         }
 
-        public DbSet<Article> Articles { get; set; }
         public DbSet<Transfert> Transferts { get; set; }
     }
 

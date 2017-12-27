@@ -62,7 +62,6 @@
     <Compile Include="Classes\Utils.cs" />
     <Compile Include="DAL\Context.cs" />
     <Compile Include="DAL\TransfertProvider.cs" />
-    <Compile Include="DTO\Article.cs" />
     <Compile Include="DTO\Transfert.cs" />
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>

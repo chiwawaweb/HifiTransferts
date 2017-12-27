@@ -27,9 +27,5 @@ namespace HifiTransferts.DTO
         public string Remarque { get; set; }
         [Column("CREATED_AT")]
         public DateTime CreatedAt { get; set; }
-
-        // les articles du transfert
-        public ICollection<Article> articles { get; set; }
-
     }
 }
