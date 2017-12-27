@@ -40,6 +40,7 @@ namespace HifiTransferts.Forms
             DataGridViewTextBoxColumn idColumn = new DataGridViewTextBoxColumn();
             idColumn.Name = "ID";
             idColumn.HeaderText = "#";
+            idColumn.Width = 50;
             idColumn.Visible = true;
 
             DataGridViewTextBoxColumn dateColumn = new DataGridViewTextBoxColumn();
@@ -51,11 +52,34 @@ namespace HifiTransferts.Forms
             dateColumn.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dateColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+            DataGridViewTextBoxColumn agenceColumn = new DataGridViewTextBoxColumn();
+            agenceColumn.Name = "Agence";
+            agenceColumn.HeaderText = "AGENCE";
+            agenceColumn.Width = 150;
+
+            DataGridViewTextBoxColumn clientColumn = new DataGridViewTextBoxColumn();
+            clientColumn.Name = "Client";
+            clientColumn.HeaderText = "CLIENT";
+            clientColumn.Width = 200;
+
+            DataGridViewTextBoxColumn articlesColumn = new DataGridViewTextBoxColumn();
+            articlesColumn.Name = "Articles";
+            articlesColumn.HeaderText = "ARTICLES";
+            articlesColumn.Width = 300;
+
+            DataGridViewTextBoxColumn contactColumn = new DataGridViewTextBoxColumn();
+            contactColumn.Name = "Contact";
+            contactColumn.HeaderText = "CONTACT";
+            contactColumn.Width = 160;
+
 
             /* Création des colonnes */
             dgvTransferts.Columns.Add(idColumn);
             dgvTransferts.Columns.Add(dateColumn);
-            
+            dgvTransferts.Columns.Add(agenceColumn);
+            dgvTransferts.Columns.Add(clientColumn);
+            dgvTransferts.Columns.Add(contactColumn);
+            dgvTransferts.Columns.Add(articlesColumn);
         }
 
         private void RefreshData()
