@@ -49,7 +49,24 @@ namespace HifiTransferts.DAL
                     throw;
                 }
             }
+        }
 
+        public int? Create(Transfert Transfert)
+        {
+            using (Context context = new Context())
+            {
+                try
+                {
+                    context.Transferts.Add(Transfert);
+                    context.SaveChanges();
+                    int? id = Transfert.Id;
+                    return id;
+                }
+                catch
+                {
+                    throw;
+                }
+            }
         }
     }
 }

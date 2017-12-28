@@ -57,6 +57,11 @@ namespace HifiTransferts.Forms
             agenceColumn.HeaderText = "AGENCE";
             agenceColumn.Width = 150;
 
+            DataGridViewTextBoxColumn vendeurColumn = new DataGridViewTextBoxColumn();
+            agenceColumn.Name = "Vendeur";
+            agenceColumn.HeaderText = "VENDEUR";
+            agenceColumn.Width = 150;
+
             DataGridViewTextBoxColumn clientColumn = new DataGridViewTextBoxColumn();
             clientColumn.Name = "Client";
             clientColumn.HeaderText = "CLIENT";
@@ -76,10 +81,38 @@ namespace HifiTransferts.Forms
             /* Création des colonnes */
             dgvTransferts.Columns.Add(idColumn);
             dgvTransferts.Columns.Add(dateColumn);
+            dgvTransferts.Columns.Add(vendeurColumn);
             dgvTransferts.Columns.Add(agenceColumn);
             dgvTransferts.Columns.Add(clientColumn);
             dgvTransferts.Columns.Add(contactColumn);
             dgvTransferts.Columns.Add(articlesColumn);
+
+            /* Ajout des lignes */
+            for (int i = 0; i < list.Count; i++)
+            {
+                int number = dgvTransferts.Rows.Add();
+
+                int? id = list[i].Id;
+                DateTime date = list[i].Date;
+                string agence = list[i].Agence;
+                string client = list[i].Client;
+                string contact = list[i].Contact;
+                string vendeur = list[i].Vendeur;
+                string articles = list[i].Articles;
+
+                dgvTransferts.Rows[number].Cells[0].Value = id;
+                dgvTransferts.Rows[number].Cells[1].Value = date.ToString("dd/MM/yyyy");
+                dgvTransferts.Rows[number].Cells[2].Value = vendeur;
+                dgvTransferts.Rows[number].Cells[3].Value = agence;
+                dgvTransferts.Rows[number].Cells[4].Value = client;
+                dgvTransferts.Rows[number].Cells[5].Value = contact;
+
+                // pointe sur l'enregistrement courant
+                if (list[i].Id == idRetour)
+                {
+                    dgvTransferts.Rows[number].Cells[1].Selected = true;
+                }
+            }
         }
 
         private void RefreshData()
@@ -88,6 +121,8 @@ namespace HifiTransferts.Forms
             list = transfertProvider.Search(""); // à completer avec mots cles / dates
 
             CreateTable(list, idRetour);
+
+
         }
     }
 }

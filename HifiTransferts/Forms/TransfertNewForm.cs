@@ -9,12 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HifiTransferts.Classes;
 using HifiTransferts;
+using HifiTransferts.DAL;
+using HifiTransferts.DTO;
 
 namespace HifiTransferts.Forms
 {
     public partial class TransfertNewForm : Form
     {
         Utils utils = new Utils();
+
+        string vendeur, agence, contact, client, articles, message;
+        bool stock;
 
         public TransfertNewForm()
         {
@@ -35,15 +40,7 @@ namespace HifiTransferts.Forms
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
 
-        private void AfficheAgences()
-        {
-            
-        }
 
         private void TransfertNewForm_Load(object sender, EventArgs e)
         {
@@ -52,6 +49,44 @@ namespace HifiTransferts.Forms
             
 
             
+
+        }
+
+        private void BtnSend_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+            SaveTransfert();
+            Close();
+        }
+
+        private void SaveTransfert()
+        {
+            /* Recuperation des donnees */
+            vendeur = CbxVendeur.Text;
+            agence = CbxAgence.Text;
+            contact = TxtContact.Text;
+
+            using (Context context = new Context())
+            {
+                Transfert transfert = new Transfert();
+                transfert.Vendeur = vendeur;
+                transfert.Agence = agence;
+                transfert.Contact = contact;
+
+                transfert.CreatedAt = DateTime.Now;
+
+                context.Transferts.Add(transfert);
+                context.SaveChanges();
+            }
 
         }
     }

@@ -17,6 +17,12 @@ namespace HifiTransferts.DTO
         [Column("DATE")]
         public DateTime Date { get; set; }
         [Required]
+        [Column("VENDEUR")]
+        public string Vendeur { get; set; }
+        [Required]
+        [Column("CLIENT")]
+        public string Client { get; set; }
+        [Required]
         [Column("AGENCE")]
         public string Agence { get; set; }
         [Column("ARTICLES")]

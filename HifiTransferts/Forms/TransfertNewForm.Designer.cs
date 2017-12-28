@@ -29,20 +29,21 @@
         private void InitializeComponent()
         {
             this.CbxAgence = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.BtnSend = new System.Windows.Forms.Button();
+            this.BtnCancel = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.TxtContact = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnSave = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.TxtClient = new System.Windows.Forms.TextBox();
             this.ChkStock = new System.Windows.Forms.CheckBox();
             this.CbxVendeur = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // CbxAgence
@@ -51,35 +52,38 @@
             this.CbxAgence.Location = new System.Drawing.Point(238, 37);
             this.CbxAgence.Name = "CbxAgence";
             this.CbxAgence.Size = new System.Drawing.Size(205, 28);
-            this.CbxAgence.TabIndex = 2;
+            this.CbxAgence.TabIndex = 1;
             // 
-            // button2
+            // BtnSend
             // 
-            this.button2.Location = new System.Drawing.Point(548, 607);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 38);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Envoyer";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BtnSend.Location = new System.Drawing.Point(545, 504);
+            this.BtnSend.Name = "BtnSend";
+            this.BtnSend.Size = new System.Drawing.Size(112, 38);
+            this.BtnSend.TabIndex = 8;
+            this.BtnSend.TabStop = false;
+            this.BtnSend.Text = "Envoyer";
+            this.BtnSend.UseVisualStyleBackColor = true;
+            this.BtnSend.Click += new System.EventHandler(this.BtnSend_Click);
             // 
-            // button3
+            // BtnCancel
             // 
-            this.button3.Location = new System.Drawing.Point(280, 607);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(123, 38);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Annuler";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.BtnCancel.Location = new System.Drawing.Point(277, 504);
+            this.BtnCancel.Name = "BtnCancel";
+            this.BtnCancel.Size = new System.Drawing.Size(123, 38);
+            this.BtnCancel.TabIndex = 6;
+            this.BtnCancel.TabStop = false;
+            this.BtnCancel.Text = "Annuler";
+            this.BtnCancel.UseVisualStyleBackColor = true;
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // textBox4
             // 
             this.textBox4.AcceptsReturn = true;
-            this.textBox4.Location = new System.Drawing.Point(22, 525);
+            this.textBox4.Location = new System.Drawing.Point(19, 422);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(638, 62);
-            this.textBox4.TabIndex = 8;
+            this.textBox4.TabIndex = 5;
             // 
             // label4
             // 
@@ -94,7 +98,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 500);
+            this.label5.Location = new System.Drawing.Point(15, 397);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 20);
@@ -126,16 +130,18 @@
             this.TxtContact.Location = new System.Drawing.Point(452, 37);
             this.TxtContact.Name = "TxtContact";
             this.TxtContact.Size = new System.Drawing.Size(208, 26);
-            this.TxtContact.TabIndex = 16;
+            this.TxtContact.TabIndex = 2;
             // 
-            // button1
+            // BtnSave
             // 
-            this.button1.Location = new System.Drawing.Point(409, 607);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 38);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Enregistrer";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnSave.Location = new System.Drawing.Point(406, 504);
+            this.BtnSave.Name = "BtnSave";
+            this.BtnSave.Size = new System.Drawing.Size(123, 38);
+            this.BtnSave.TabIndex = 7;
+            this.BtnSave.TabStop = false;
+            this.BtnSave.Text = "Enregistrer";
+            this.BtnSave.UseVisualStyleBackColor = true;
+            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // label8
             // 
@@ -152,7 +158,7 @@
             this.TxtClient.Location = new System.Drawing.Point(22, 94);
             this.TxtClient.Name = "TxtClient";
             this.TxtClient.Size = new System.Drawing.Size(208, 26);
-            this.TxtClient.TabIndex = 19;
+            this.TxtClient.TabIndex = 3;
             // 
             // ChkStock
             // 
@@ -170,35 +176,48 @@
             this.CbxVendeur.Location = new System.Drawing.Point(22, 35);
             this.CbxVendeur.Name = "CbxVendeur";
             this.CbxVendeur.Size = new System.Drawing.Size(205, 28);
-            this.CbxVendeur.TabIndex = 22;
+            this.CbxVendeur.TabIndex = 0;
             // 
             // textBox1
             // 
+            this.textBox1.AcceptsReturn = true;
+            this.textBox1.AcceptsTab = true;
             this.textBox1.Location = new System.Drawing.Point(19, 174);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(641, 205);
-            this.textBox1.TabIndex = 23;
+            this.textBox1.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(18, 151);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 20);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Articles";
             // 
             // TransfertNewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(688, 668);
+            this.ClientSize = new System.Drawing.Size(688, 578);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.CbxVendeur);
             this.Controls.Add(this.ChkStock);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.TxtClient);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BtnSave);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.TxtContact);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.BtnCancel);
+            this.Controls.Add(this.BtnSend);
             this.Controls.Add(this.CbxAgence);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -216,19 +235,20 @@
 
         #endregion
         private System.Windows.Forms.ComboBox CbxAgence;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button BtnSend;
+        private System.Windows.Forms.Button BtnCancel;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox TxtContact;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnSave;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox TxtClient;
         private System.Windows.Forms.CheckBox ChkStock;
         private System.Windows.Forms.ComboBox CbxVendeur;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
