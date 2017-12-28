@@ -33,5 +33,7 @@ namespace HifiTransferts.DTO
         public string Remarque { get; set; }
         [Column("CREATED_AT")]
         public DateTime CreatedAt { get; set; }
+        [Column("UPDATED_AT")]
+        public DateTime UpdatedAt { get; set; }
     }
 }

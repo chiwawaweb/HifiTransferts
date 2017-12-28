@@ -20,6 +20,7 @@ namespace HifiTransferts.Forms
 
         string vendeur, agence, contact, client, articles, message;
         bool stock;
+        DateTime date;
 
         public TransfertNewForm()
         {
@@ -71,14 +72,18 @@ namespace HifiTransferts.Forms
         private void SaveTransfert()
         {
             /* Recuperation des donnees */
+            date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
             vendeur = CbxVendeur.Text;
+            client = TxtClient.Text;
             agence = CbxAgence.Text;
             contact = TxtContact.Text;
 
             using (Context context = new Context())
             {
                 Transfert transfert = new Transfert();
+                transfert.Date = date;
                 transfert.Vendeur = vendeur;
+                transfert.Client = client;
                 transfert.Agence = agence;
                 transfert.Contact = contact;
 
