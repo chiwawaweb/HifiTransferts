@@ -48,6 +48,7 @@
             // 
             // CbxAgence
             // 
+            this.CbxAgence.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxAgence.FormattingEnabled = true;
             this.CbxAgence.Location = new System.Drawing.Point(238, 37);
             this.CbxAgence.Name = "CbxAgence";
@@ -83,7 +84,7 @@
             this.TxtMessage.Multiline = true;
             this.TxtMessage.Name = "TxtMessage";
             this.TxtMessage.Size = new System.Drawing.Size(638, 62);
-            this.TxtMessage.TabIndex = 5;
+            this.TxtMessage.TabIndex = 6;
             // 
             // label4
             // 
@@ -166,7 +167,7 @@
             this.ChkStock.Location = new System.Drawing.Point(238, 98);
             this.ChkStock.Name = "ChkStock";
             this.ChkStock.Size = new System.Drawing.Size(110, 24);
-            this.ChkStock.TabIndex = 21;
+            this.ChkStock.TabIndex = 4;
             this.ChkStock.Text = "Pour stock";
             this.ChkStock.UseVisualStyleBackColor = true;
             // 
@@ -186,7 +187,7 @@
             this.TxtArticles.Multiline = true;
             this.TxtArticles.Name = "TxtArticles";
             this.TxtArticles.Size = new System.Drawing.Size(641, 205);
-            this.TxtArticles.TabIndex = 4;
+            this.TxtArticles.TabIndex = 5;
             // 
             // label1
             // 

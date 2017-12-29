@@ -25,9 +25,6 @@ namespace HifiTransferts.DTO
         [Required]
         [Column("AGENCE")]
         public string Agence { get; set; }
-        //[Required]
-        [Column("EMAIL_AGENCE")]
-        public string EmailAgence { get; set; }
         [Column("ARTICLES")]
         public string Articles { get; set; }
         [Column("CONTACT")]
