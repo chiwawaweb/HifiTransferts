@@ -77,10 +77,13 @@ namespace HifiTransferts.Forms
             client = utils.RemoveDiacritics(TxtClient.Text.ToUpper().Trim());
             stock = ChkStock.Checked;
             agence = utils.RemoveDiacritics(CbxAgence.Text.ToUpper().Trim());
-            
+            int agenceNumber = int.Parse(agence.Substring(0, 3));
+            string agenceName = agence.Substring(6);
             contact = utils.RemoveDiacritics(TxtContact.Text.ToUpper().Trim());
             articles = utils.RemoveDiacritics(TxtArticles.Text.ToUpper().Trim());
             remarque = utils.RemoveDiacritics(TxtMessage.Text.ToUpper().Trim());
+
+            
 
             using (Context context = new Context())
             {
@@ -97,6 +100,15 @@ namespace HifiTransferts.Forms
                 transfert.Contact = contact;
                 transfert.Articles = articles;
                 transfert.Remarque = remarque;
+
+                foreach (Agence agence in utils.AllAgencies())
+                {
+                    if (agence.Numero == agenceNumber && agence.Nom == agenceName)
+                    {
+                        MessageBox.Show(agence.Email);
+                    }
+                }
+                
 
                 transfert.CreatedAt = DateTime.Now;
 

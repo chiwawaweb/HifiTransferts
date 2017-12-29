@@ -21,7 +21,7 @@ namespace HifiTransferts.Classes
                 new Agence { Numero=30, Nom="HOWALD", Email="hifi30@hifi.lu",Actif=true},
                 new Agence { Numero=33, Nom="BETTEMBOURG", Email="hifi33@hifi.lu",Actif=true},
                 new Agence { Numero=34, Nom="BERTRANGE EM", Email="hifi34em@hifi.lu",Actif=true},
-                new Agence { Numero=34, Nom="BERTRANGE AV", Email="hifi34AV@hifi.lu",Actif=true},
+                new Agence { Numero=34, Nom="BERTRANGE AV", Email="hifi34av@hifi.lu",Actif=true},
                 new Agence { Numero=34, Nom="BERTRANGE MM", Email="hifi34mm@hifi.lu",Actif=true},
                 new Agence { Numero=36, Nom="GARE", Email="hifi36@hifi.lu",Actif=true},
                 new Agence { Numero=37, Nom="BERELDANGE", Email="hifi37@hifi.lu",Actif=true},

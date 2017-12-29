@@ -68,5 +68,23 @@ namespace HifiTransferts.DAL
                 }
             }
         }
+
+        public string GetEmailById(int id)
+        {
+            using (Context context = new Context())
+            {
+                try
+                {
+                    
+
+                    return "";
+                }
+                catch
+                {
+                    throw;
+                }
+            }
+            
+        }
     }
 }
