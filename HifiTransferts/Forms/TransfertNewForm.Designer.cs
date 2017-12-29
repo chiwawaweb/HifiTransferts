@@ -31,7 +31,7 @@
             this.CbxAgence = new System.Windows.Forms.ComboBox();
             this.BtnSend = new System.Windows.Forms.Button();
             this.BtnCancel = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.TxtMessage = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -42,7 +42,7 @@
             this.TxtClient = new System.Windows.Forms.TextBox();
             this.ChkStock = new System.Windows.Forms.CheckBox();
             this.CbxVendeur = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtArticles = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -76,14 +76,14 @@
             this.BtnCancel.UseVisualStyleBackColor = true;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
-            // textBox4
+            // TxtMessage
             // 
-            this.textBox4.AcceptsReturn = true;
-            this.textBox4.Location = new System.Drawing.Point(19, 422);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(638, 62);
-            this.textBox4.TabIndex = 5;
+            this.TxtMessage.AcceptsReturn = true;
+            this.TxtMessage.Location = new System.Drawing.Point(19, 422);
+            this.TxtMessage.Multiline = true;
+            this.TxtMessage.Name = "TxtMessage";
+            this.TxtMessage.Size = new System.Drawing.Size(638, 62);
+            this.TxtMessage.TabIndex = 5;
             // 
             // label4
             // 
@@ -178,15 +178,15 @@
             this.CbxVendeur.Size = new System.Drawing.Size(205, 28);
             this.CbxVendeur.TabIndex = 0;
             // 
-            // textBox1
+            // TxtArticles
             // 
-            this.textBox1.AcceptsReturn = true;
-            this.textBox1.AcceptsTab = true;
-            this.textBox1.Location = new System.Drawing.Point(19, 174);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(641, 205);
-            this.textBox1.TabIndex = 4;
+            this.TxtArticles.AcceptsReturn = true;
+            this.TxtArticles.AcceptsTab = true;
+            this.TxtArticles.Location = new System.Drawing.Point(19, 174);
+            this.TxtArticles.Multiline = true;
+            this.TxtArticles.Name = "TxtArticles";
+            this.TxtArticles.Size = new System.Drawing.Size(641, 205);
+            this.TxtArticles.TabIndex = 4;
             // 
             // label1
             // 
@@ -204,7 +204,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 578);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TxtArticles);
             this.Controls.Add(this.CbxVendeur);
             this.Controls.Add(this.ChkStock);
             this.Controls.Add(this.label8);
@@ -215,7 +215,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.TxtMessage);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnSend);
             this.Controls.Add(this.CbxAgence);
@@ -237,7 +237,7 @@
         private System.Windows.Forms.ComboBox CbxAgence;
         private System.Windows.Forms.Button BtnSend;
         private System.Windows.Forms.Button BtnCancel;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox TxtMessage;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -248,7 +248,7 @@
         private System.Windows.Forms.TextBox TxtClient;
         private System.Windows.Forms.CheckBox ChkStock;
         private System.Windows.Forms.ComboBox CbxVendeur;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtArticles;
         private System.Windows.Forms.Label label1;
     }
 }

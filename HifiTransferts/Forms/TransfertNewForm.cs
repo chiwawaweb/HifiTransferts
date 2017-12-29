@@ -18,7 +18,7 @@ namespace HifiTransferts.Forms
     {
         Utils utils = new Utils();
 
-        string vendeur, agence, contact, client, articles, message;
+        string vendeur, agence, emailAgence, contact, client, articles, remarque;
         bool stock;
         DateTime date;
 
@@ -73,19 +73,30 @@ namespace HifiTransferts.Forms
         {
             /* Recuperation des donnees */
             date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-            vendeur = CbxVendeur.Text;
-            client = TxtClient.Text;
-            agence = CbxAgence.Text;
-            contact = TxtContact.Text;
+            vendeur = utils.RemoveDiacritics(CbxVendeur.Text.ToUpper().Trim());
+            client = utils.RemoveDiacritics(TxtClient.Text.ToUpper().Trim());
+            stock = ChkStock.Checked;
+            agence = utils.RemoveDiacritics(CbxAgence.Text.ToUpper().Trim());
+            contact = utils.RemoveDiacritics(TxtContact.Text.ToUpper().Trim());
+            articles = utils.RemoveDiacritics(TxtArticles.Text.ToUpper().Trim());
+            remarque = utils.RemoveDiacritics(TxtMessage.Text.ToUpper().Trim());
 
             using (Context context = new Context())
             {
                 Transfert transfert = new Transfert();
                 transfert.Date = date;
                 transfert.Vendeur = vendeur;
+                if (stock == true)
+                {
+                    client = "STOCK MAGASIN";
+                }
+                
                 transfert.Client = client;
                 transfert.Agence = agence;
+                transfert.EmailAgence = " ";// emailAgence;
                 transfert.Contact = contact;
+                transfert.Articles = articles;
+                transfert.Remarque = remarque;
 
                 transfert.CreatedAt = DateTime.Now;
 

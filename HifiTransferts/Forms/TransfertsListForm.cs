@@ -106,6 +106,7 @@ namespace HifiTransferts.Forms
                 dgvTransferts.Rows[number].Cells[3].Value = agence;
                 dgvTransferts.Rows[number].Cells[4].Value = client;
                 dgvTransferts.Rows[number].Cells[5].Value = contact;
+                dgvTransferts.Rows[number].Cells[6].Value = articles;
 
                 // pointe sur l'enregistrement courant
                 if (list[i].Id == idRetour)
