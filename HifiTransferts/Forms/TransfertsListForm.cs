@@ -42,12 +42,14 @@ namespace HifiTransferts.Forms
             idColumn.HeaderText = "#";
             idColumn.Width = 50;
             idColumn.Visible = true;
+            idColumn.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            idColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             DataGridViewTextBoxColumn dateColumn = new DataGridViewTextBoxColumn();
             dateColumn.Name = "Date";
             dateColumn.HeaderText = "DATE";
-            dateColumn.Width = 90;
-            dateColumn.MinimumWidth = 90;
+            dateColumn.Width = 85;
+            dateColumn.MinimumWidth = 85;
             dateColumn.FillWeight = 1;
             dateColumn.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dateColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -58,9 +60,9 @@ namespace HifiTransferts.Forms
             agenceColumn.Width = 150;
 
             DataGridViewTextBoxColumn vendeurColumn = new DataGridViewTextBoxColumn();
-            agenceColumn.Name = "Vendeur";
-            agenceColumn.HeaderText = "VENDEUR";
-            agenceColumn.Width = 150;
+            vendeurColumn.Name = "Vendeur";
+            vendeurColumn.HeaderText = "VENDEUR";
+            vendeurColumn.Width = 150;
 
             DataGridViewTextBoxColumn clientColumn = new DataGridViewTextBoxColumn();
             clientColumn.Name = "Client";
@@ -77,6 +79,11 @@ namespace HifiTransferts.Forms
             contactColumn.HeaderText = "CONTACT";
             contactColumn.Width = 160;
 
+            DataGridViewTextBoxColumn messageColumn = new DataGridViewTextBoxColumn();
+            messageColumn.Name = "Message";
+            messageColumn.HeaderText = "MESSAGE";
+            messageColumn.Width = 280;
+
 
             /* Création des colonnes */
             dgvTransferts.Columns.Add(idColumn);
@@ -86,19 +93,21 @@ namespace HifiTransferts.Forms
             dgvTransferts.Columns.Add(clientColumn);
             dgvTransferts.Columns.Add(contactColumn);
             dgvTransferts.Columns.Add(articlesColumn);
+            dgvTransferts.Columns.Add(messageColumn);
 
             /* Ajout des lignes */
             for (int i = 0; i < list.Count; i++)
             {
                 int number = dgvTransferts.Rows.Add();
 
-                int? id = list[i].Id;
+                string id = list[i].Id.ToString("000000");
                 DateTime date = list[i].Date;
                 string agence = list[i].Agence;
                 string client = list[i].Client;
                 string contact = list[i].Contact;
                 string vendeur = list[i].Vendeur;
                 string articles = list[i].Articles;
+                string remarque = list[i].Remarque;
 
                 dgvTransferts.Rows[number].Cells[0].Value = id;
                 dgvTransferts.Rows[number].Cells[1].Value = date.ToString("dd/MM/yyyy");
@@ -107,6 +116,7 @@ namespace HifiTransferts.Forms
                 dgvTransferts.Rows[number].Cells[4].Value = client;
                 dgvTransferts.Rows[number].Cells[5].Value = contact;
                 dgvTransferts.Rows[number].Cells[6].Value = articles;
+                dgvTransferts.Rows[number].Cells[7].Value = remarque;
 
                 // pointe sur l'enregistrement courant
                 if (list[i].Id == idRetour)

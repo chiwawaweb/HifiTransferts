@@ -83,8 +83,6 @@ namespace HifiTransferts.Forms
             articles = utils.RemoveDiacritics(TxtArticles.Text.ToUpper().Trim());
             remarque = utils.RemoveDiacritics(TxtMessage.Text.ToUpper().Trim());
 
-            
-
             using (Context context = new Context())
             {
                 Transfert transfert = new Transfert();
@@ -108,7 +106,6 @@ namespace HifiTransferts.Forms
                         MessageBox.Show(agence.Email);
                     }
                 }
-                
 
                 transfert.CreatedAt = DateTime.Now;
 

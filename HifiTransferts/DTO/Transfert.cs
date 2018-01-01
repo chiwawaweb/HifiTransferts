@@ -13,7 +13,7 @@ namespace HifiTransferts.DTO
         // data
         [Key]
         [Column("ID")]
-        public int? Id { get; set; }
+        public int Id { get; set; }
         [Column("DATE")]
         public DateTime Date { get; set; }
         [Required]
