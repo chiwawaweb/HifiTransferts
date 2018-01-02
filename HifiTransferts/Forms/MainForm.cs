@@ -38,7 +38,7 @@ namespace HifiTransferts.Forms
 
         private void NewTransfert()
         {
-            TransfertNewForm frm = new TransfertNewForm();
+            TransfertEditForm frm = new TransfertEditForm();
             frm.ShowDialog();
         }
     }

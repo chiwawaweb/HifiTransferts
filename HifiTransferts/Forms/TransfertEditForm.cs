@@ -14,7 +14,7 @@ using HifiTransferts.DTO;
 
 namespace HifiTransferts.Forms
 {
-    public partial class TransfertNewForm : Form
+    public partial class TransfertEditForm : Form
     {
         Utils utils = new Utils();
 
@@ -22,7 +22,7 @@ namespace HifiTransferts.Forms
         bool stock;
         DateTime date;
 
-        public TransfertNewForm()
+        public TransfertEditForm()
         {
             InitializeComponent();
 
@@ -83,6 +83,16 @@ namespace HifiTransferts.Forms
             articles = utils.RemoveDiacritics(TxtArticles.Text.ToUpper().Trim());
             remarque = utils.RemoveDiacritics(TxtMessage.Text.ToUpper().Trim());
 
+            /* Vérification des donnees */
+            bool errors = false;
+
+            if (vendeur.Length<2)
+            {
+                errors = true;
+                MessageBox.Show(errors.ToString());
+            }
+
+
             using (Context context = new Context())
             {
                 Transfert transfert = new Transfert();
@@ -103,7 +113,7 @@ namespace HifiTransferts.Forms
                 {
                     if (agence.Numero == agenceNumber && agence.Nom == agenceName)
                     {
-                        MessageBox.Show(agence.Email);
+                        //MessageBox.Show(agence.Email);
                     }
                 }
 

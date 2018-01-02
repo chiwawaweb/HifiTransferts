@@ -1,6 +1,6 @@
 ﻿namespace HifiTransferts.Forms
 {
-    partial class TransfertNewForm
+    partial class TransfertEditForm
     {
         /// <summary>
         /// Required designer variable.

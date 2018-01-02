@@ -43,6 +43,7 @@
             this.dgvTransferts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTransferts.Location = new System.Drawing.Point(0, 54);
             this.dgvTransferts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvTransferts.MultiSelect = false;
             this.dgvTransferts.Name = "dgvTransferts";
             this.dgvTransferts.ReadOnly = true;
             this.dgvTransferts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
