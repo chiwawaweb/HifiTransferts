@@ -57,9 +57,10 @@
             // 
             // BtnSend
             // 
-            this.BtnSend.Location = new System.Drawing.Point(545, 504);
+            this.BtnSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSend.Location = new System.Drawing.Point(499, 504);
             this.BtnSend.Name = "BtnSend";
-            this.BtnSend.Size = new System.Drawing.Size(112, 38);
+            this.BtnSend.Size = new System.Drawing.Size(158, 38);
             this.BtnSend.TabIndex = 8;
             this.BtnSend.TabStop = false;
             this.BtnSend.Text = "Envoyer";
@@ -68,7 +69,7 @@
             // 
             // BtnCancel
             // 
-            this.BtnCancel.Location = new System.Drawing.Point(416, 504);
+            this.BtnCancel.Location = new System.Drawing.Point(370, 504);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(123, 38);
             this.BtnCancel.TabIndex = 6;
@@ -135,9 +136,11 @@
             // 
             // BtnSave
             // 
+            this.BtnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.BtnSave.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.BtnSave.Location = new System.Drawing.Point(22, 504);
             this.BtnSave.Name = "BtnSave";
-            this.BtnSave.Size = new System.Drawing.Size(123, 38);
+            this.BtnSave.Size = new System.Drawing.Size(170, 38);
             this.BtnSave.TabIndex = 7;
             this.BtnSave.TabStop = false;
             this.BtnSave.Text = "Enregistrer";
