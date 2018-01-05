@@ -199,7 +199,7 @@
             this.label1.TabIndex = 22;
             this.label1.Text = "Articles";
             // 
-            // TransfertNewForm
+            // TransfertEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -223,11 +223,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "TransfertNewForm";
+            this.Name = "TransfertEditForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Demande de transfert";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TransfertEditForm_FormClosed);
             this.Load += new System.EventHandler(this.TransfertNewForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

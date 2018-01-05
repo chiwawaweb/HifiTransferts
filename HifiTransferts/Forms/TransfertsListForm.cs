@@ -126,7 +126,7 @@ namespace HifiTransferts.Forms
             }
         }
 
-        private void RefreshData()
+        public void RefreshData()
         {
             List<Transfert> list;
             list = transfertProvider.Search(""); // à completer avec mots cles / dates
@@ -134,6 +134,17 @@ namespace HifiTransferts.Forms
             CreateTable(list, idRetour);
 
 
+        }
+
+        private void BtnAdd_Click(object sender, EventArgs e)
+        {
+            NewTransfert();
+        }
+
+        private void NewTransfert()
+        {
+            TransfertEditForm frm = new TransfertEditForm(this, false);
+            frm.ShowDialog();
         }
     }
 }

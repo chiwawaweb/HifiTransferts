@@ -19,11 +19,21 @@ namespace HifiTransferts.Forms
         Utils utils = new Utils();
 
         string vendeur, agence, contact, client, articles, remarque;
-        bool stock;
+        bool stock, transfertUpdateMode;
+        int _id;
+
         DateTime date;
 
-        public TransfertEditForm()
+        TransfertsListForm _owner;
+
+        
+
+        public TransfertEditForm(TransfertsListForm owner, bool update, int id = 0)
         {
+            _owner = owner;
+            _id = id;
+            transfertUpdateMode = update;
+            FormClosed += new FormClosedEventHandler(TransfertEditForm_FormClosed);
             InitializeComponent();
 
             /* Combobox Agence */
@@ -113,7 +123,7 @@ namespace HifiTransferts.Forms
                 {
                     if (agence.Numero == agenceNumber && agence.Nom == agenceName)
                     {
-                        //MessageBox.Show(agence.Email);
+                        transfert.Email = agence.Email;
                     }
                 }
 
@@ -123,6 +133,11 @@ namespace HifiTransferts.Forms
                 context.SaveChanges();
             }
 
+        }
+
+        private void TransfertEditForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _owner.RefreshData();
         }
     }
 }
