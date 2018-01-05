@@ -26,6 +26,8 @@ namespace HifiTransferts.Forms
 
         TransfertsListForm _owner;
 
+        TransfertProvider transfertProvider = new TransfertProvider();
+
         public TransfertEditForm(TransfertsListForm owner, bool update, int id = 0)
         {
             _owner = owner;
@@ -46,6 +48,16 @@ namespace HifiTransferts.Forms
             CbxAgence.DataSource = dataSource;
             CbxAgence.DisplayMember = "FullName";
             CbxAgence.ValueMember = "FullName";
+
+            /* Combobox Vendeur */
+            var dataSourceVendeur = new List<Transfert>();
+            foreach (Transfert transfert in transfertProvider.GetVendeurs())
+            {
+                dataSourceVendeur.Add(transfert);
+            }
+            CbxVendeur.DataSource = dataSourceVendeur;
+            CbxVendeur.DisplayMember = "Vendeur";
+            CbxVendeur.ValueMember = "Vendeur";
 
         }
 
@@ -100,13 +112,13 @@ namespace HifiTransferts.Forms
             if (vendeur.Length<2)
             {
                 errors = true;
-                errMsg = "- Vendeur non spécifié";
+                errMsg = "- Vendeur non spécifié\n";
             }
 
             if (articles.Length<2)
             {
                 errors = true;
-                errMsg += "\n- Article(s) manquant(s)";
+                errMsg += "- Article(s) manquant(s)\n";
             }
 
             if (errors == true)

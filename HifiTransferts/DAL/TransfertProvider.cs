@@ -24,6 +24,28 @@ namespace HifiTransferts.DAL
             }
         }
 
+        public List<Transfert> GetVendeurs()
+        {
+            using (Context context = new Context())
+            {
+                try
+                {
+
+
+
+                    var vendeurs = from b in context.Transferts
+                                   orderby b.Vendeur ascending
+                                   //group b by b.Vendeur into g
+                                   select b;
+                    return vendeurs.ToList();
+                }
+                catch
+                {
+                    throw;
+                }
+            }
+        }
+
         public List<Transfert> Search(string keywords)
         {
             using (Context context = new Context())
@@ -69,22 +91,6 @@ namespace HifiTransferts.DAL
             }
         }
 
-        public string GetEmailById(int id)
-        {
-            using (Context context = new Context())
-            {
-                try
-                {
-                    
-
-                    return "";
-                }
-                catch
-                {
-                    throw;
-                }
-            }
-            
-        }
+        
     }
 }

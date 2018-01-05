@@ -177,6 +177,8 @@
             // 
             // CbxVendeur
             // 
+            this.CbxVendeur.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.CbxVendeur.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CbxVendeur.FormattingEnabled = true;
             this.CbxVendeur.Location = new System.Drawing.Point(22, 35);
             this.CbxVendeur.Name = "CbxVendeur";
