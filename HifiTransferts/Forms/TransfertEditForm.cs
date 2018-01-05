@@ -51,21 +51,22 @@ namespace HifiTransferts.Forms
 
         }
 
-
-
-        private void TransfertNewForm_Load(object sender, EventArgs e)
+        private void ChkStock_CheckedChanged(object sender, EventArgs e)
         {
-            
-
-            
-
-            
-
+            if (ChkStock.Checked==true)
+            {
+                TxtClient.Enabled = false;
+            }
+            else
+            {
+                TxtClient.Enabled = true;
+            }
         }
 
         private void BtnSend_Click(object sender, EventArgs e)
         {
-
+            SaveTransfert(true);
+            Close();
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
@@ -75,11 +76,11 @@ namespace HifiTransferts.Forms
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            SaveTransfert();
+            SaveTransfert(false);
             Close();
         }
 
-        private void SaveTransfert()
+        private void SaveTransfert(bool send)
         {
             /* Recuperation des donnees */
             date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
@@ -92,6 +93,8 @@ namespace HifiTransferts.Forms
             contact = utils.RemoveDiacritics(TxtContact.Text.ToUpper().Trim());
             articles = utils.RemoveDiacritics(TxtArticles.Text.ToUpper().Trim());
             remarque = utils.RemoveDiacritics(TxtMessage.Text.ToUpper().Trim());
+
+            
 
             /* Vérification des donnees */
             bool errors = false;
@@ -126,11 +129,18 @@ namespace HifiTransferts.Forms
                         transfert.Email = agence.Email;
                     }
                 }
+                transfert.Envoye = send;
 
                 transfert.CreatedAt = DateTime.Now;
 
                 context.Transferts.Add(transfert);
                 context.SaveChanges();
+
+                if (send == true)
+                {
+                    // Envoi du transfert par email
+
+                }
             }
 
         }

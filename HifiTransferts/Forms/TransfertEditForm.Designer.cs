@@ -68,7 +68,7 @@
             // 
             // BtnCancel
             // 
-            this.BtnCancel.Location = new System.Drawing.Point(277, 504);
+            this.BtnCancel.Location = new System.Drawing.Point(416, 504);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(123, 38);
             this.BtnCancel.TabIndex = 6;
@@ -80,10 +80,10 @@
             // TxtMessage
             // 
             this.TxtMessage.AcceptsReturn = true;
-            this.TxtMessage.Location = new System.Drawing.Point(19, 422);
+            this.TxtMessage.Location = new System.Drawing.Point(22, 422);
             this.TxtMessage.Multiline = true;
             this.TxtMessage.Name = "TxtMessage";
-            this.TxtMessage.Size = new System.Drawing.Size(638, 62);
+            this.TxtMessage.Size = new System.Drawing.Size(635, 62);
             this.TxtMessage.TabIndex = 6;
             // 
             // label4
@@ -135,7 +135,7 @@
             // 
             // BtnSave
             // 
-            this.BtnSave.Location = new System.Drawing.Point(406, 504);
+            this.BtnSave.Location = new System.Drawing.Point(22, 504);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(123, 38);
             this.BtnSave.TabIndex = 7;
@@ -170,6 +170,7 @@
             this.ChkStock.TabIndex = 4;
             this.ChkStock.Text = "Pour stock";
             this.ChkStock.UseVisualStyleBackColor = true;
+            this.ChkStock.CheckedChanged += new System.EventHandler(this.ChkStock_CheckedChanged);
             // 
             // CbxVendeur
             // 
@@ -182,11 +183,10 @@
             // TxtArticles
             // 
             this.TxtArticles.AcceptsReturn = true;
-            this.TxtArticles.AcceptsTab = true;
-            this.TxtArticles.Location = new System.Drawing.Point(19, 174);
+            this.TxtArticles.Location = new System.Drawing.Point(22, 174);
             this.TxtArticles.Multiline = true;
             this.TxtArticles.Name = "TxtArticles";
-            this.TxtArticles.Size = new System.Drawing.Size(641, 205);
+            this.TxtArticles.Size = new System.Drawing.Size(635, 205);
             this.TxtArticles.TabIndex = 5;
             // 
             // label1
@@ -229,7 +229,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Demande de transfert";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TransfertEditForm_FormClosed);
-            this.Load += new System.EventHandler(this.TransfertNewForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

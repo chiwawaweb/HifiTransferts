@@ -58,31 +58,43 @@ namespace HifiTransferts.Forms
             agenceColumn.Name = "Agence";
             agenceColumn.HeaderText = "AGENCE";
             agenceColumn.Width = 150;
+            agenceColumn.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             DataGridViewTextBoxColumn vendeurColumn = new DataGridViewTextBoxColumn();
             vendeurColumn.Name = "Vendeur";
             vendeurColumn.HeaderText = "VENDEUR";
             vendeurColumn.Width = 150;
+            vendeurColumn.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             DataGridViewTextBoxColumn clientColumn = new DataGridViewTextBoxColumn();
             clientColumn.Name = "Client";
             clientColumn.HeaderText = "CLIENT";
             clientColumn.Width = 200;
+            clientColumn.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             DataGridViewTextBoxColumn articlesColumn = new DataGridViewTextBoxColumn();
             articlesColumn.Name = "Articles";
             articlesColumn.HeaderText = "ARTICLES";
             articlesColumn.Width = 300;
+            articlesColumn.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             DataGridViewTextBoxColumn contactColumn = new DataGridViewTextBoxColumn();
             contactColumn.Name = "Contact";
             contactColumn.HeaderText = "CONTACT";
             contactColumn.Width = 160;
+            contactColumn.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             DataGridViewTextBoxColumn messageColumn = new DataGridViewTextBoxColumn();
             messageColumn.Name = "Message";
             messageColumn.HeaderText = "MESSAGE";
-            messageColumn.Width = 280;
+            messageColumn.Width = 250;
+            messageColumn.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            DataGridViewCheckBoxColumn envoyeColumn = new DataGridViewCheckBoxColumn();
+            envoyeColumn.Name = "Envoye";
+            envoyeColumn.HeaderText = "ENVOYE";
+            envoyeColumn.Width = 70;
+            envoyeColumn.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
 
             /* Création des colonnes */
@@ -94,6 +106,7 @@ namespace HifiTransferts.Forms
             dgvTransferts.Columns.Add(contactColumn);
             dgvTransferts.Columns.Add(articlesColumn);
             dgvTransferts.Columns.Add(messageColumn);
+            dgvTransferts.Columns.Add(envoyeColumn);
 
             /* Ajout des lignes */
             for (int i = 0; i < list.Count; i++)
@@ -108,6 +121,7 @@ namespace HifiTransferts.Forms
                 string vendeur = list[i].Vendeur;
                 string articles = list[i].Articles;
                 string remarque = list[i].Remarque;
+                bool envoye = list[i].Envoye;
 
                 dgvTransferts.Rows[number].Cells[0].Value = id;
                 dgvTransferts.Rows[number].Cells[1].Value = date.ToString("dd/MM/yyyy");
@@ -117,6 +131,7 @@ namespace HifiTransferts.Forms
                 dgvTransferts.Rows[number].Cells[5].Value = contact;
                 dgvTransferts.Rows[number].Cells[6].Value = articles;
                 dgvTransferts.Rows[number].Cells[7].Value = remarque;
+                dgvTransferts.Rows[number].Cells[8].Value = envoye;
 
                 // pointe sur l'enregistrement courant
                 if (list[i].Id == idRetour)
@@ -145,6 +160,22 @@ namespace HifiTransferts.Forms
         {
             TransfertEditForm frm = new TransfertEditForm(this, false);
             frm.ShowDialog();
+        }
+
+        private void BtnEdit_Click(object sender, EventArgs e)
+        {
+            EditTransfert();
+        }
+
+        private void EditTransfert()
+        {
+            if (dgvTransferts.RowCount > 0)
+            {
+                int ID = int.Parse(dgvTransferts.CurrentRow.Cells[0].Value.ToString());
+                idRetour = ID;
+                TransfertEditForm frm = new TransfertEditForm(this, true, ID);
+                frm.ShowDialog();
+            }
         }
     }
 }

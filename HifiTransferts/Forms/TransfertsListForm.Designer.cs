@@ -32,8 +32,9 @@
             this.dgvTransferts = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.BtnAdd = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.BtnEdit = new System.Windows.Forms.ToolStripButton();
+            this.BtnDelete = new System.Windows.Forms.ToolStripButton();
+            this.BtnSend = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransferts)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -61,8 +62,9 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.BtnAdd,
-            this.toolStripButton2,
-            this.toolStripButton3});
+            this.BtnEdit,
+            this.BtnDelete,
+            this.BtnSend});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1220, 32);
@@ -78,23 +80,30 @@
             this.BtnAdd.Text = "Demander un transfert";
             this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
-            // toolStripButton2
+            // BtnEdit
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(28, 29);
-            this.toolStripButton2.Text = "toolStripButton2";
+            this.BtnEdit.Image = ((System.Drawing.Image)(resources.GetObject("BtnEdit.Image")));
+            this.BtnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnEdit.Name = "BtnEdit";
+            this.BtnEdit.Size = new System.Drawing.Size(107, 29);
+            this.BtnEdit.Text = "Modifier";
+            this.BtnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
-            // toolStripButton3
+            // BtnDelete
             // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(28, 29);
-            this.toolStripButton3.Text = "toolStripButton3";
+            this.BtnDelete.Image = ((System.Drawing.Image)(resources.GetObject("BtnDelete.Image")));
+            this.BtnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnDelete.Name = "BtnDelete";
+            this.BtnDelete.Size = new System.Drawing.Size(123, 29);
+            this.BtnDelete.Text = "Supprimer";
+            // 
+            // BtnSend
+            // 
+            this.BtnSend.Image = ((System.Drawing.Image)(resources.GetObject("BtnSend.Image")));
+            this.BtnSend.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnSend.Name = "BtnSend";
+            this.BtnSend.Size = new System.Drawing.Size(103, 29);
+            this.BtnSend.Text = "Envoyer";
             // 
             // TransfertsListForm
             // 
@@ -122,7 +131,8 @@
         private System.Windows.Forms.DataGridView dgvTransferts;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton BtnAdd;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton BtnEdit;
+        private System.Windows.Forms.ToolStripButton BtnDelete;
+        private System.Windows.Forms.ToolStripButton BtnSend;
     }
 }
