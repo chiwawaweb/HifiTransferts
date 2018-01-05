@@ -26,8 +26,6 @@ namespace HifiTransferts.Forms
 
         TransfertsListForm _owner;
 
-        
-
         public TransfertEditForm(TransfertsListForm owner, bool update, int id = 0)
         {
             _owner = owner;
@@ -66,7 +64,6 @@ namespace HifiTransferts.Forms
         private void BtnSend_Click(object sender, EventArgs e)
         {
             SaveTransfert(true);
-            Close();
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
@@ -77,7 +74,6 @@ namespace HifiTransferts.Forms
         private void BtnSave_Click(object sender, EventArgs e)
         {
             SaveTransfert(false);
-            Close();
         }
 
         private void SaveTransfert(bool send)
@@ -98,51 +94,69 @@ namespace HifiTransferts.Forms
 
             /* Vérification des donnees */
             bool errors = false;
+            bool errVendeur, errArticles = false;
+            string errMsg = "";
 
             if (vendeur.Length<2)
             {
                 errors = true;
-                MessageBox.Show(errors.ToString());
+                errMsg = "- Vendeur non spécifié";
             }
 
-
-            using (Context context = new Context())
+            if (articles.Length<2)
             {
-                Transfert transfert = new Transfert();
-                transfert.Date = date;
-                transfert.Vendeur = vendeur;
-                if (stock == true)
-                {
-                    client = "STOCK MAGASIN";
-                }
-                
-                transfert.Client = client;
-                transfert.Agence = agence;
-                transfert.Contact = contact;
-                transfert.Articles = articles;
-                transfert.Remarque = remarque;
-
-                foreach (Agence agence in utils.AllAgencies())
-                {
-                    if (agence.Numero == agenceNumber && agence.Nom == agenceName)
-                    {
-                        transfert.Email = agence.Email;
-                    }
-                }
-                transfert.Envoye = send;
-
-                transfert.CreatedAt = DateTime.Now;
-
-                context.Transferts.Add(transfert);
-                context.SaveChanges();
-
-                if (send == true)
-                {
-                    // Envoi du transfert par email
-
-                }
+                errors = true;
+                errMsg += "\n- Article(s) manquant(s)";
             }
 
+            if (errors == true)
+            {
+                /* Erreurs dans la saisie */
+                MessageBox.Show(errMsg,"Erreur(s) dans la saisie",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            else
+            {
+                /* Aucune erreur, on continue */
+                using (Context context = new Context())
+                {
+                    Transfert transfert = new Transfert();
+                    transfert.Date = date;
+                    transfert.Vendeur = vendeur;
+                    if (stock == true)
+                    {
+                        client = "STOCK MAGASIN";
+                    }
+
+                    transfert.Client = client;
+                    transfert.Agence = agence;
+                    transfert.Contact = contact;
+                    transfert.Articles = articles;
+                    transfert.Remarque = remarque;
+
+                    foreach (Agence agence in utils.AllAgencies())
+                    {
+                        if (agence.Numero == agenceNumber && agence.Nom == agenceName)
+                        {
+                            transfert.Email = agence.Email;
+                        }
+                    }
+                    transfert.Envoye = send;
+
+                    transfert.CreatedAt = DateTime.Now;
+
+                    context.Transferts.Add(transfert);
+                    context.SaveChanges();
+
+                    if (send == true)
+                    {
+                        // Envoi du transfert par email
+
+                    }
+
+                    Close();
+                }
+
+            }
         }
 
         private void TransfertEditForm_FormClosed(object sender, FormClosedEventArgs e)
