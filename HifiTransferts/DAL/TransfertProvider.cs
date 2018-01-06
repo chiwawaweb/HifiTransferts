@@ -30,13 +30,10 @@ namespace HifiTransferts.DAL
             {
                 try
                 {
-
-
-
                     var vendeurs = from b in context.Transferts
                                    orderby b.Vendeur ascending
                                    //group b by b.Vendeur into g
-                                   select b;
+                                   select g;
                     return vendeurs.ToList();
                 }
                 catch
