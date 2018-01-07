@@ -24,17 +24,20 @@ namespace HifiTransferts.DAL
             }
         }
 
-        public List<Transfert> GetVendeurs()
+        public List<string> GetVendeurs()
         {
             using (Context context = new Context())
             {
                 try
                 {
+                    var result = context.Transferts.Select(v => v.Vendeur).Distinct();
+
                     var vendeurs = from b in context.Transferts
                                    orderby b.Vendeur ascending
-                                   //group b by b.Vendeur into g
-                                   select g;
-                    return vendeurs.ToList();
+                                   
+                                   select b
+                                   ;
+                    return result.ToList();
                 }
                 catch
                 {

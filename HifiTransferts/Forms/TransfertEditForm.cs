@@ -50,14 +50,14 @@ namespace HifiTransferts.Forms
             CbxAgence.ValueMember = "FullName";
 
             /* Combobox Vendeur */
-            var dataSourceVendeur = new List<Transfert>();
-            foreach (Transfert transfert in transfertProvider.GetVendeurs())
+            var dataSourceVendeur = new List<string>();
+            foreach (string transfert in transfertProvider.GetVendeurs())
             {
                 dataSourceVendeur.Add(transfert);
             }
             CbxVendeur.DataSource = dataSourceVendeur;
             CbxVendeur.DisplayMember = "Vendeur";
-            CbxVendeur.ValueMember = "Vendeur";
+            //CbxVendeur.ValueMember = "Vendeur";
 
         }
 
