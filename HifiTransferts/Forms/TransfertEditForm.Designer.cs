@@ -44,10 +44,13 @@
             this.CbxVendeur = new System.Windows.Forms.ComboBox();
             this.TxtArticles = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TxtNoteInterne = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // CbxAgence
             // 
+            this.CbxAgence.BackColor = System.Drawing.SystemColors.Window;
             this.CbxAgence.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxAgence.FormattingEnabled = true;
             this.CbxAgence.Location = new System.Drawing.Point(238, 37);
@@ -58,7 +61,7 @@
             // BtnSend
             // 
             this.BtnSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSend.Location = new System.Drawing.Point(499, 504);
+            this.BtnSend.Location = new System.Drawing.Point(502, 618);
             this.BtnSend.Name = "BtnSend";
             this.BtnSend.Size = new System.Drawing.Size(158, 38);
             this.BtnSend.TabIndex = 8;
@@ -69,7 +72,7 @@
             // 
             // BtnCancel
             // 
-            this.BtnCancel.Location = new System.Drawing.Point(370, 504);
+            this.BtnCancel.Location = new System.Drawing.Point(373, 618);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(123, 38);
             this.BtnCancel.TabIndex = 6;
@@ -138,7 +141,7 @@
             // 
             this.BtnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.BtnSave.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.BtnSave.Location = new System.Drawing.Point(22, 504);
+            this.BtnSave.Location = new System.Drawing.Point(25, 618);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(170, 38);
             this.BtnSave.TabIndex = 7;
@@ -204,11 +207,33 @@
             this.label1.TabIndex = 22;
             this.label1.Text = "Articles";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 488);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 20);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Note interne ";
+            // 
+            // TxtNoteInterne
+            // 
+            this.TxtNoteInterne.AcceptsReturn = true;
+            this.TxtNoteInterne.BackColor = System.Drawing.SystemColors.Info;
+            this.TxtNoteInterne.Location = new System.Drawing.Point(22, 513);
+            this.TxtNoteInterne.Multiline = true;
+            this.TxtNoteInterne.Name = "TxtNoteInterne";
+            this.TxtNoteInterne.Size = new System.Drawing.Size(635, 62);
+            this.TxtNoteInterne.TabIndex = 23;
+            // 
             // TransfertEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(688, 578);
+            this.ClientSize = new System.Drawing.Size(688, 668);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.TxtNoteInterne);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TxtArticles);
             this.Controls.Add(this.CbxVendeur);
@@ -256,5 +281,7 @@
         private System.Windows.Forms.ComboBox CbxVendeur;
         private System.Windows.Forms.TextBox TxtArticles;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox TxtNoteInterne;
     }
 }

@@ -51,6 +51,7 @@ namespace HifiTransferts.Forms
 
             /* Combobox Vendeur */
             var dataSourceVendeur = new List<string>();
+            dataSourceVendeur.Add("");
             foreach (string transfert in transfertProvider.GetVendeurs())
             {
                 dataSourceVendeur.Add(transfert);
@@ -107,7 +108,7 @@ namespace HifiTransferts.Forms
             /* Vérification des donnees */
             bool errors = false;
             bool errVendeur, errArticles = false;
-            string errMsg = "";
+            string errMsg = "Votre saisie comporte des erreurs : \n\n";
 
             if (vendeur.Length<2)
             {
@@ -124,7 +125,7 @@ namespace HifiTransferts.Forms
             if (errors == true)
             {
                 /* Erreurs dans la saisie */
-                MessageBox.Show(errMsg,"Erreur(s) dans la saisie",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("" + errMsg,"Erreur(s) dans la saisie",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else
             {

@@ -116,7 +116,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TransfertsListForm";
-            this.Text = "TransfertsListForm";
             this.Load += new System.EventHandler(this.TransfertsListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransferts)).EndInit();
             this.toolStrip1.ResumeLayout(false);
