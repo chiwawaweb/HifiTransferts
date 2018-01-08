@@ -91,6 +91,24 @@ namespace HifiTransferts.DAL
             }
         }
 
-        
+        public void Delete(Transfert Transfert)
+        {
+            using (Context context = new Context())
+            {
+
+                try
+                {
+                    context.Transferts.Attach(Transfert);
+                    context.Transferts.Remove(Transfert);
+                    context.SaveChanges();
+                }
+                catch
+                {
+                    throw;
+                }
+            }
+        }
+
+
     }
 }

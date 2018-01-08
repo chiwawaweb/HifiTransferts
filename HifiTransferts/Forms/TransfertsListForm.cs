@@ -177,5 +177,24 @@ namespace HifiTransferts.Forms
                 frm.ShowDialog();
             }
         }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            SupprimerTransfert();
+        }
+
+        private void SupprimerTransfert()
+        {
+            if (dgvTransferts.RowCount > 0)
+            {
+                DialogResult result = MessageBox.Show("Etes-vous certain de vouloir supprimer cette demande de transfert ?", "Confirmation de suppression", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    int ID = int.Parse(dgvTransferts.CurrentRow.Cells[0].Value.ToString());
+                    transfertProvider.Delete(new Transfert { Id = ID });
+                    RefreshData();
+                }
+            }
+        }
     }
 }

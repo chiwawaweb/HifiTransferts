@@ -18,7 +18,7 @@ namespace HifiTransferts.Forms
     {
         Utils utils = new Utils();
 
-        string vendeur, agence, contact, client, articles, remarque;
+        string vendeur, agence, contact, client, articles, remarque, noteInterne;
         bool stock, transfertUpdateMode;
         int _id;
 
@@ -35,6 +35,19 @@ namespace HifiTransferts.Forms
             transfertUpdateMode = update;
             FormClosed += new FormClosedEventHandler(TransfertEditForm_FormClosed);
             InitializeComponent();
+
+            switch (transfertUpdateMode)
+            {
+                /* Mode création */
+                case false:
+                    NewTransfert();
+                    break;
+
+                /* Mode mise à jour */
+                case true:
+                    LoadTransfert();
+                    break;
+            }
 
             /* Combobox Agence */
             var dataSource = new List<Agence>();
@@ -59,6 +72,16 @@ namespace HifiTransferts.Forms
             CbxVendeur.DataSource = dataSourceVendeur;
             CbxVendeur.DisplayMember = "Vendeur";
             //CbxVendeur.ValueMember = "Vendeur";
+
+        }
+
+        private void NewTransfert()
+        {
+
+        }
+
+        private void LoadTransfert()
+        {
 
         }
 
@@ -102,6 +125,7 @@ namespace HifiTransferts.Forms
             contact = utils.RemoveDiacritics(TxtContact.Text.ToUpper().Trim());
             articles = utils.RemoveDiacritics(TxtArticles.Text.ToUpper().Trim());
             remarque = utils.RemoveDiacritics(TxtMessage.Text.ToUpper().Trim());
+            noteInterne = utils.RemoveDiacritics(TxtMessage.Text.ToUpper().Trim());
 
             
 
@@ -145,6 +169,7 @@ namespace HifiTransferts.Forms
                     transfert.Contact = contact;
                     transfert.Articles = articles;
                     transfert.Remarque = remarque;
+                    transfert.noteInterne = noteInterne;
 
                     foreach (Agence agence in utils.AllAgencies())
                     {
@@ -157,8 +182,10 @@ namespace HifiTransferts.Forms
 
                     transfert.CreatedAt = DateTime.Now;
 
-                    context.Transferts.Add(transfert);
-                    context.SaveChanges();
+                    transfertProvider.Create(transfert);
+
+                    /*context.Transferts.Add(transfert);
+                    context.SaveChanges();*/
 
                     if (send == true)
                     {

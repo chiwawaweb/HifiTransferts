@@ -48,13 +48,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvTransferts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTransferts.Location = new System.Drawing.Point(0, 54);
-            this.dgvTransferts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvTransferts.Location = new System.Drawing.Point(0, 35);
             this.dgvTransferts.MultiSelect = false;
             this.dgvTransferts.Name = "dgvTransferts";
             this.dgvTransferts.ReadOnly = true;
             this.dgvTransferts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTransferts.Size = new System.Drawing.Size(1220, 711);
+            this.dgvTransferts.Size = new System.Drawing.Size(813, 462);
             this.dgvTransferts.TabIndex = 0;
             // 
             // toolStrip1
@@ -67,7 +66,7 @@
             this.BtnSend});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1220, 32);
+            this.toolStrip1.Size = new System.Drawing.Size(813, 31);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -76,7 +75,7 @@
             this.BtnAdd.Image = ((System.Drawing.Image)(resources.GetObject("BtnAdd.Image")));
             this.BtnAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BtnAdd.Name = "BtnAdd";
-            this.BtnAdd.Size = new System.Drawing.Size(219, 29);
+            this.BtnAdd.Size = new System.Drawing.Size(154, 28);
             this.BtnAdd.Text = "Demander un transfert";
             this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
@@ -85,7 +84,7 @@
             this.BtnEdit.Image = ((System.Drawing.Image)(resources.GetObject("BtnEdit.Image")));
             this.BtnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BtnEdit.Name = "BtnEdit";
-            this.BtnEdit.Size = new System.Drawing.Size(107, 29);
+            this.BtnEdit.Size = new System.Drawing.Size(80, 28);
             this.BtnEdit.Text = "Modifier";
             this.BtnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
@@ -94,25 +93,27 @@
             this.BtnDelete.Image = ((System.Drawing.Image)(resources.GetObject("BtnDelete.Image")));
             this.BtnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BtnDelete.Name = "BtnDelete";
-            this.BtnDelete.Size = new System.Drawing.Size(123, 29);
+            this.BtnDelete.Size = new System.Drawing.Size(90, 28);
             this.BtnDelete.Text = "Supprimer";
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // BtnSend
             // 
             this.BtnSend.Image = ((System.Drawing.Image)(resources.GetObject("BtnSend.Image")));
             this.BtnSend.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BtnSend.Name = "BtnSend";
-            this.BtnSend.Size = new System.Drawing.Size(103, 29);
+            this.BtnSend.Size = new System.Drawing.Size(77, 28);
             this.BtnSend.Text = "Envoyer";
             // 
             // TransfertsListForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1220, 765);
+            this.ClientSize = new System.Drawing.Size(813, 497);
             this.ControlBox = false;
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dgvTransferts);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TransfertsListForm";
