@@ -77,6 +77,11 @@ namespace HifiTransferts.Forms
 
         private void NewTransfert()
         {
+            /* Récupération des données */
+
+
+
+            /* Affichage des données */
 
         }
 
