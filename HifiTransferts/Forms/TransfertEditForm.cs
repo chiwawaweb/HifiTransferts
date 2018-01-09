@@ -19,6 +19,7 @@ namespace HifiTransferts.Forms
         Utils utils = new Utils();
 
         string vendeur, agence, contact, client, articles, remarque, noteInterne;
+        string formTitle;
         bool stock, transfertUpdateMode;
         int _id;
 
@@ -35,19 +36,6 @@ namespace HifiTransferts.Forms
             transfertUpdateMode = update;
             FormClosed += new FormClosedEventHandler(TransfertEditForm_FormClosed);
             InitializeComponent();
-
-            switch (transfertUpdateMode)
-            {
-                /* Mode création */
-                case false:
-                    NewTransfert();
-                    break;
-
-                /* Mode mise à jour */
-                case true:
-                    LoadTransfert();
-                    break;
-            }
 
             /* Combobox Agence */
             var dataSource = new List<Agence>();
@@ -73,21 +61,58 @@ namespace HifiTransferts.Forms
             CbxVendeur.DisplayMember = "Vendeur";
             //CbxVendeur.ValueMember = "Vendeur";
 
+            switch (transfertUpdateMode)
+            {
+                /* Mode création */
+                case false:
+                    NewTransfert();
+                    break;
+
+                /* Mode mise à jour */
+                case true:
+                    LoadTransfert();
+                    break;
+            }
+
+            /* Titre du formulaire */
+            this.Text = formTitle;
+
+            
+
         }
 
         private void NewTransfert()
         {
-            /* Récupération des données */
+            formTitle = "Nouvelle demande de transfert";
 
 
-
-            /* Affichage des données */
 
         }
 
         private void LoadTransfert()
         {
+            formTitle = "Modification d'une demande de transfert";
 
+            /* Récupération des données */
+            vendeur = transfertProvider.GetTransfertById(_id).Vendeur;
+            agence = transfertProvider.GetTransfertById(_id).Agence;
+            contact = transfertProvider.GetTransfertById(_id).Contact;
+            client = transfertProvider.GetTransfertById(_id).Client;
+            stock = transfertProvider.GetTransfertById(_id).Stock;
+            articles = transfertProvider.GetTransfertById(_id).Articles;
+            remarque = transfertProvider.GetTransfertById(_id).Remarque;
+            noteInterne = transfertProvider.GetTransfertById(_id).NoteInterne;
+
+
+            /* Affichage des données */
+            CbxVendeur.Text = vendeur;
+            CbxAgence.Text = agence;
+            TxtContact.Text = contact;
+            TxtClient.Text = client;
+            ChkStock.Checked = stock;
+            TxtArticles.Text = articles;
+            TxtMessage.Text = remarque;
+            TxtNoteInterne.Text = noteInterne;
         }
 
         private void ChkStock_CheckedChanged(object sender, EventArgs e)
@@ -95,6 +120,7 @@ namespace HifiTransferts.Forms
             if (ChkStock.Checked==true)
             {
                 TxtClient.Enabled = false;
+                TxtClient.Text = "";
             }
             else
             {
@@ -130,7 +156,7 @@ namespace HifiTransferts.Forms
             contact = utils.RemoveDiacritics(TxtContact.Text.ToUpper().Trim());
             articles = utils.RemoveDiacritics(TxtArticles.Text.ToUpper().Trim());
             remarque = utils.RemoveDiacritics(TxtMessage.Text.ToUpper().Trim());
-            noteInterne = utils.RemoveDiacritics(TxtMessage.Text.ToUpper().Trim());
+            noteInterne = utils.RemoveDiacritics(TxtNoteInterne.Text.ToUpper().Trim());
 
             
 
@@ -170,11 +196,12 @@ namespace HifiTransferts.Forms
                     }
 
                     transfert.Client = client;
+                    transfert.Stock = stock;
                     transfert.Agence = agence;
                     transfert.Contact = contact;
                     transfert.Articles = articles;
                     transfert.Remarque = remarque;
-                    transfert.noteInterne = noteInterne;
+                    transfert.NoteInterne = noteInterne;
 
                     foreach (Agence agence in utils.AllAgencies())
                     {

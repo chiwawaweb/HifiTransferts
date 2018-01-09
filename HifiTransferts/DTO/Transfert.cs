@@ -22,6 +22,8 @@ namespace HifiTransferts.DTO
         [Required]
         [Column("CLIENT")]
         public string Client { get; set; }
+        [Column("STOCK")]
+        public bool Stock { get; set; }
         [Required]
         [Column("AGENCE")]
         public string Agence { get; set; }
@@ -37,7 +39,7 @@ namespace HifiTransferts.DTO
         [Column("ENVOYE")]
         public bool Envoye { get; set; }
         [Column("NOTE_INTERNE")]
-        public string noteInterne { get; set; }
+        public string NoteInterne { get; set; }
         [Column("CREATED_AT")]
         public DateTime CreatedAt { get; set; }
         [Column("UPDATED_AT")]

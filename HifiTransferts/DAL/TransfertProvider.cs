@@ -109,6 +109,19 @@ namespace HifiTransferts.DAL
             }
         }
 
-
+        public Transfert GetTransfertById(int ID)
+        {
+            using (Context context = new Context())
+            {
+                try
+                {
+                    return context.Transferts.Find(ID);
+                }
+                catch
+                {
+                    throw;
+                }
+            }
+        }
     }
 }
