@@ -20,7 +20,7 @@ namespace HifiTransferts.Forms
 
         string vendeur, agence, contact, client, articles, remarque, noteInterne;
         string formTitle;
-        bool stock, transfertUpdateMode;
+        bool stock, transfertUpdateMode, envoye;
         int _id;
 
         DateTime date;
@@ -102,7 +102,7 @@ namespace HifiTransferts.Forms
             articles = transfertProvider.GetTransfertById(_id).Articles;
             remarque = transfertProvider.GetTransfertById(_id).Remarque;
             noteInterne = transfertProvider.GetTransfertById(_id).NoteInterne;
-
+            envoye = transfertProvider.GetTransfertById(_id).Envoye;
 
             /* Affichage des données */
             CbxVendeur.Text = vendeur;
@@ -113,6 +113,14 @@ namespace HifiTransferts.Forms
             TxtArticles.Text = articles;
             TxtMessage.Text = remarque;
             TxtNoteInterne.Text = noteInterne;
+
+            /* Vérifie si déjà envoyé par mail */
+            if (envoye == true)
+            {
+                LblEnvoye.Visible = true;
+                BtnSend.Text = "Réenvoyer";
+            }
+
         }
 
         private void ChkStock_CheckedChanged(object sender, EventArgs e)
