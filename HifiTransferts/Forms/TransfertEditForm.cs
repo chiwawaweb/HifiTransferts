@@ -11,6 +11,10 @@ using HifiTransferts.Classes;
 using HifiTransferts;
 using HifiTransferts.DAL;
 using HifiTransferts.DTO;
+using System.Net;
+using System.Net.Mail;
+using System.Net.Mime;
+using System.Threading;
 
 namespace HifiTransferts.Forms
 {
@@ -18,8 +22,8 @@ namespace HifiTransferts.Forms
     {
         Utils utils = new Utils();
 
-        string vendeur, agence, contact, client, articles, remarque, noteInterne, agenceName;
-        string formTitle;
+        string vendeur, agence, contact, client, articles, remarque, noteInterne, agenceName, emailAgence;
+        string formTitle, ligContact;
         bool stock, transfertUpdateMode, envoye;
         int _id, agenceNumber;
 
@@ -210,7 +214,7 @@ namespace HifiTransferts.Forms
                     if (send == true)
                     {
                         // Envoi du transfert par email
-
+                        SendEmail();
                     }
 
                     Close();
@@ -242,9 +246,11 @@ namespace HifiTransferts.Forms
             {
                 if (agence.Numero == agenceNumber && agence.Nom == agenceName)
                 {
-                    transfert.Email = agence.Email;
+                    emailAgence = agence.Email;
                 }
             }
+
+            transfert.Email = emailAgence;
             transfert.Envoye = send;
 
             transfert.CreatedAt = DateTime.Now;
@@ -275,10 +281,13 @@ namespace HifiTransferts.Forms
             {
                 if (agence.Numero == agenceNumber && agence.Nom == agenceName)
                 {
-                    transfert.Email = agence.Email;
+                    emailAgence = agence.Email;
                 }
             }
 
+            transfert.Email = emailAgence;
+
+            /* Si transfert déjà envoyé, le statut ne change pas */
             if (envoye ==  true)
             {
                 send = true;
@@ -294,6 +303,88 @@ namespace HifiTransferts.Forms
         private void TransfertEditForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             _owner.RefreshData();
+        }
+
+        private void SendEmail()
+        {
+            MessageBox.Show(emailAgence);
+            
+            /* Vérifie si email valide et non vide */
+            string emailToSend = utils.RemoveDiacritics(emailAgence.ToLower().Trim());
+
+            if (utils.IsEmailValid(emailToSend) == true && emailToSend.Length > 3)
+            {
+                try
+                {
+                    MailMessage mail = new MailMessage();
+                    SmtpClient SmtpServer = new SmtpClient();
+
+                    /* Vérifie si "vu avec " */
+                    if (contact.Trim().Length>0)
+                    {
+                        ligContact = "Vu avec " + contact + "\n\n";
+                    }
+
+                    /* Vérifie si client ou stock */
+
+
+                    /* Bonne journée/aprem/soirée */
+                    
+
+                    mail.From = new MailAddress(utils.ReadSetting("emailAgence"), "Hifi International");
+                    //mail.To.Add(emailToSend);
+                    mail.To.Add("fredandroid76@gmail.com");
+                    //mail.CC.Add(utils.ReadSetting("emailAgence")); // Copie à l'agence
+                    mail.Subject = "Demande de transfert";
+                    string bodyEmail = "Bonjour,\n\n" +
+                        "Merci de tranférer les articles suivant : \n\n" +
+                        
+                        articles + "\n\n" +
+
+                        ligContact +
+
+                        "Bonne journée.\n\n" +
+                        vendeur + "\n\n" +
+                        utils.ReadSetting("nomAgence") + "\n" +
+                        utils.ReadSetting("adresse1Agence") + "\n" +
+                        utils.ReadSetting("adresse2Agence") + "\n" +
+                        utils.ReadSetting("cpAgence") + " " + utils.ReadSetting("villeAgence") + "\n" +
+                        "Tél. : " + utils.ReadSetting("telAgence") + "\n" +
+                        "Fax. : " + utils.ReadSetting("faxAgence") + "\n" +
+                        "Email : " + utils.ReadSetting("emailAgence") + "\n";
+
+                    mail.Body = bodyEmail.ToUpper();
+
+                    SmtpServer.Port = int.Parse(utils.ReadSetting("emailPort"));
+                    SmtpServer.Host = utils.ReadSetting("emailSmtp");
+                    //SmtpServer.UseDefaultCredentials = true;
+                    SmtpServer.Credentials = new NetworkCredential(utils.ReadSetting("emailUser"), utils.ReadSetting("emailPassword"));
+                    SmtpServer.EnableSsl = true;
+
+                    /* Envoi du mail dans un thread séparé */
+                    Thread T1 = new Thread(delegate ()
+                    {
+                        SmtpServer.Send(mail);
+                        mail.Dispose();
+                        SmtpServer.Dispose();
+                    });
+
+                    T1.Start();
+                    MessageBox.Show("La demande de transfert a été envoyée avec succès par e-mail.", "Demande expédiée", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+                catch (Exception ex)
+                {
+                    /*Console.WriteLine(
+                         "Exception caught in CreateTestMessage1(): {0}",
+                         ex.ToString());*/
+                }
+            }
+            else
+            {
+                /* Email non valide */
+                MessageBox.Show("L'adresse email n'est pas valide !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -61,5 +61,30 @@ namespace HifiTransferts.Classes
                 return "";
             }
         }
+
+        /// <summary>
+        /// Vérifie la validité d'une adresse email.
+        /// </summary>
+        /// <param name="emailaddress"></param>
+        /// <returns></returns>
+        public bool IsEmailValid(string emailaddress)
+        {
+            try
+            {
+                if (emailaddress != "")
+                {
+                    MailAddress m = new MailAddress(emailaddress);
+                    return true;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
+        }
     }
 }
