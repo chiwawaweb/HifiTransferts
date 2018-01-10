@@ -173,8 +173,8 @@ namespace HifiTransferts.Forms
             agenceName = agence.Substring(6);
             contact = utils.RemoveDiacritics(TxtContact.Text.ToUpper().Trim());
             articles = utils.RemoveDiacritics(TxtArticles.Text.ToUpper().Trim());
-            remarque = utils.RemoveDiacritics(TxtMessage.Text.ToUpper().Trim());
-            noteInterne = utils.RemoveDiacritics(TxtNoteInterne.Text.ToUpper().Trim());
+            remarque = TxtMessage.Text.Trim();
+            noteInterne = TxtNoteInterne.Text.Trim();
 
             /* Vérification des donnees */
             bool errors = false;
@@ -338,6 +338,7 @@ namespace HifiTransferts.Forms
                     /* Vérifie si client ou stock */
                     if (stock == true)
                     {
+
                         ligClient = "Pour stock magasin \n\n";
                     }
                     else
@@ -370,13 +371,13 @@ namespace HifiTransferts.Forms
                     string bodyEmail = "Bonjour,\n\n" +
                         "Merci de tranférer le ou les articles suivants : \n\n" +
 
-                        "-----------------------\n\n" +
+                        "--------------------------\n\n" +
                         articles + "\n\n" +
-                        "-----------------------\n\n" +
-
-                        ligRemarque + 
+                        "--------------------------\n\n" +
 
                         ligContact +
+
+                        ligRemarque +
 
                         ligClient +
 
