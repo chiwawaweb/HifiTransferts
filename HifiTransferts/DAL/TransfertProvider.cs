@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HifiTransferts.DTO;
+using System.Data.Entity;
 
 namespace HifiTransferts.DAL
 {
@@ -116,6 +117,26 @@ namespace HifiTransferts.DAL
                 try
                 {
                     return context.Transferts.Find(ID);
+                }
+                catch
+                {
+                    throw;
+                }
+            }
+        }
+
+        public int? Update(Transfert Transfert)
+        {
+            using (Context context = new Context())
+            {
+                try
+                {
+                    context.Transferts.Attach(Transfert);
+                    // Très important, signifier le fait que l'entité a été modifiée.
+                    context.Entry(Transfert).State = EntityState.Modified;
+                    context.SaveChanges();
+                    int? id = Transfert.Id;
+                    return id;
                 }
                 catch
                 {

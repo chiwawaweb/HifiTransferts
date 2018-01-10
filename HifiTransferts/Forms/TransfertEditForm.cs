@@ -18,15 +18,15 @@ namespace HifiTransferts.Forms
     {
         Utils utils = new Utils();
 
-        string vendeur, agence, contact, client, articles, remarque, noteInterne;
+        string vendeur, agence, contact, client, articles, remarque, noteInterne, agenceName;
         string formTitle;
         bool stock, transfertUpdateMode, envoye;
-        int _id;
+        int _id, agenceNumber;
 
         DateTime date;
 
         TransfertsListForm _owner;
-
+        Transfert transfert;
         TransfertProvider transfertProvider = new TransfertProvider();
 
         public TransfertEditForm(TransfertsListForm owner, bool update, int id = 0)
@@ -117,8 +117,13 @@ namespace HifiTransferts.Forms
             /* Vérifie si déjà envoyé par mail */
             if (envoye == true)
             {
-                LblEnvoye.Visible = true;
+                TssSended.Visible = true;
                 BtnSend.Text = "Réenvoyer";
+            }
+            else
+            {
+                TssSended.Visible = true;
+                TssSended.Text = "Cette demande est en attente d'envoi...";
             }
 
         }
@@ -159,14 +164,12 @@ namespace HifiTransferts.Forms
             client = utils.RemoveDiacritics(TxtClient.Text.ToUpper().Trim());
             stock = ChkStock.Checked;
             agence = utils.RemoveDiacritics(CbxAgence.Text.ToUpper().Trim());
-            int agenceNumber = int.Parse(agence.Substring(0, 3));
-            string agenceName = agence.Substring(6);
+            agenceNumber = int.Parse(agence.Substring(0, 3));
+            agenceName = agence.Substring(6);
             contact = utils.RemoveDiacritics(TxtContact.Text.ToUpper().Trim());
             articles = utils.RemoveDiacritics(TxtArticles.Text.ToUpper().Trim());
             remarque = utils.RemoveDiacritics(TxtMessage.Text.ToUpper().Trim());
             noteInterne = utils.RemoveDiacritics(TxtNoteInterne.Text.ToUpper().Trim());
-
-            
 
             /* Vérification des donnees */
             bool errors = false;
@@ -195,38 +198,15 @@ namespace HifiTransferts.Forms
                 /* Aucune erreur, on continue */
                 using (Context context = new Context())
                 {
-                    Transfert transfert = new Transfert();
-                    transfert.Date = date;
-                    transfert.Vendeur = vendeur;
-                    if (stock == true)
+                    if (transfertUpdateMode==true)
                     {
-                        client = "STOCK MAGASIN";
+                        UpdateDatabase(send);
                     }
-
-                    transfert.Client = client;
-                    transfert.Stock = stock;
-                    transfert.Agence = agence;
-                    transfert.Contact = contact;
-                    transfert.Articles = articles;
-                    transfert.Remarque = remarque;
-                    transfert.NoteInterne = noteInterne;
-
-                    foreach (Agence agence in utils.AllAgencies())
+                    else
                     {
-                        if (agence.Numero == agenceNumber && agence.Nom == agenceName)
-                        {
-                            transfert.Email = agence.Email;
-                        }
+                        AddDatabase(send);
                     }
-                    transfert.Envoye = send;
-
-                    transfert.CreatedAt = DateTime.Now;
-
-                    transfertProvider.Create(transfert);
-
-                    /*context.Transferts.Add(transfert);
-                    context.SaveChanges();*/
-
+                    
                     if (send == true)
                     {
                         // Envoi du transfert par email
@@ -237,6 +217,78 @@ namespace HifiTransferts.Forms
                 }
 
             }
+        }
+
+        private void AddDatabase(bool send)
+        {
+            Transfert transfert = new Transfert();
+
+            transfert.Date = date;
+            transfert.Vendeur = vendeur;
+            if (stock == true)
+            {
+                client = "STOCK MAGASIN";
+            }
+
+            transfert.Client = client;
+            transfert.Stock = stock;
+            transfert.Agence = agence;
+            transfert.Contact = contact;
+            transfert.Articles = articles;
+            transfert.Remarque = remarque;
+            transfert.NoteInterne = noteInterne;
+
+            foreach (Agence agence in utils.AllAgencies())
+            {
+                if (agence.Numero == agenceNumber && agence.Nom == agenceName)
+                {
+                    transfert.Email = agence.Email;
+                }
+            }
+            transfert.Envoye = send;
+
+            transfert.CreatedAt = DateTime.Now;
+
+            transfertProvider.Create(transfert);
+        }
+
+        private void UpdateDatabase(bool send)
+        {
+            Transfert transfert = transfertProvider.GetTransfertById(_id);
+
+            //transfert.Date = date;
+            transfert.Vendeur = vendeur;
+            if (stock == true)
+            {
+                client = "STOCK MAGASIN";
+            }
+
+            transfert.Client = client;
+            transfert.Stock = stock;
+            transfert.Agence = agence;
+            transfert.Contact = contact;
+            transfert.Articles = articles;
+            transfert.Remarque = remarque;
+            transfert.NoteInterne = noteInterne;
+
+            foreach (Agence agence in utils.AllAgencies())
+            {
+                if (agence.Numero == agenceNumber && agence.Nom == agenceName)
+                {
+                    transfert.Email = agence.Email;
+                }
+            }
+
+            if (envoye ==  true)
+            {
+                send = true;
+            }
+            transfert.Envoye = send;
+
+            transfert.UpdatedAt = DateTime.Now;
+
+
+            transfertProvider.Update(transfert);
         }
 
         private void TransfertEditForm_FormClosed(object sender, FormClosedEventArgs e)
