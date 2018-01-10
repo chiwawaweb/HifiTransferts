@@ -24,7 +24,7 @@ namespace HifiTransferts.Forms
         Utils utils = new Utils();
 
         string vendeur, agence, contact, client, articles, remarque, noteInterne, agenceName, emailAgence;
-        string formTitle, ligContact, ligBonneJournee;
+        string formTitle, ligContact, ligBonneJournee, ligRemarque, ligClient;
         bool stock, transfertUpdateMode, envoye;
         int _id, agenceNumber;
 
@@ -329,16 +329,38 @@ namespace HifiTransferts.Forms
                     }
 
                     /* Message */
-
+                    if (remarque.Length>0)
+                    {
+                        ligRemarque = "Remarque : \n" + remarque + "\n\n";
+                    }
+                        
 
                     /* Vérifie si client ou stock */
-
+                    if (stock == true)
+                    {
+                        ligClient = "Pour stock magasin \n\n";
+                    }
+                    else
+                    {
+                        ligClient = "Client : " + client + "\n\n";
+                    }
 
                     /* Bonne journée/aprem/soirée */
-                    if (DateTime.Now.Hour > 17)
+                    if (DateTime.Now.Hour > 4 && DateTime.Now.Hour <= 17)
+                    {
+                        ligBonneJournee = "Bonne journée.";
+                    }
+
+                    if (DateTime.Now.Hour > 17 && DateTime.Now.Hour <= 22)
                     {
                         ligBonneJournee = "Bonne soirée.";
                     }
+
+                    if (DateTime.Now.Hour > 22 && DateTime.Now.Hour <= 4)
+                    {
+                        ligBonneJournee = "Bonne nuit.";
+                    }
+
 
                     mail.From = new MailAddress(utils.ReadSetting("emailAgence"), "Hifi International");
                     //mail.To.Add(emailToSend);
@@ -346,16 +368,23 @@ namespace HifiTransferts.Forms
                     //mail.CC.Add(utils.ReadSetting("emailAgence")); // Copie à l'agence
                     mail.Subject = "Demande de transfert";
                     string bodyEmail = "Bonjour,\n\n" +
-                        "Merci de tranférer les articles suivant : \n\n" +
-                        
+                        "Merci de tranférer le ou les articles suivants : \n\n" +
+
+                        "-----------------------\n\n" +
                         articles + "\n\n" +
+                        "-----------------------\n\n" +
+
+                        ligRemarque + 
 
                         ligContact +
 
-                        ligBonneJournee + 
+                        ligClient +
 
-                        "Bonne journée.\n\n" +
+                        "Merci !\n" +
+                        ligBonneJournee + "\n\n" +
+
                         ti.ToTitleCase(vendeur.ToLower()) + "\n\n" +
+
                         utils.ReadSetting("nomAgence") + "\n" +
                         utils.ReadSetting("adresse1Agence") + "\n" +
                         utils.ReadSetting("adresse2Agence") + "\n" +
