@@ -118,6 +118,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Docs\Infos.txt" />
     <Content Include="icon-app.ico" />
     <Content Include="Resources\icon-app.ico" />
     <Content Include="Resources\icon_add.ico" />

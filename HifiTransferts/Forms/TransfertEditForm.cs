@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
 using System.Windows.Forms;
 using HifiTransferts.Classes;
 using HifiTransferts;
@@ -23,7 +24,7 @@ namespace HifiTransferts.Forms
         Utils utils = new Utils();
 
         string vendeur, agence, contact, client, articles, remarque, noteInterne, agenceName, emailAgence;
-        string formTitle, ligContact;
+        string formTitle, ligContact, ligBonneJournee;
         bool stock, transfertUpdateMode, envoye;
         int _id, agenceNumber;
 
@@ -307,7 +308,6 @@ namespace HifiTransferts.Forms
 
         private void SendEmail()
         {
-            MessageBox.Show(emailAgence);
             
             /* Vérifie si email valide et non vide */
             string emailToSend = utils.RemoveDiacritics(emailAgence.ToLower().Trim());
@@ -319,17 +319,26 @@ namespace HifiTransferts.Forms
                     MailMessage mail = new MailMessage();
                     SmtpClient SmtpServer = new SmtpClient();
 
+                    TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
+
                     /* Vérifie si "vu avec " */
                     if (contact.Trim().Length>0)
                     {
-                        ligContact = "Vu avec " + contact + "\n\n";
+                        
+                        ligContact = "Vu avec " + ti.ToTitleCase(contact.ToLower()) + "\n\n";
                     }
+
+                    /* Message */
+
 
                     /* Vérifie si client ou stock */
 
 
                     /* Bonne journée/aprem/soirée */
-                    
+                    if (DateTime.Now.Hour > 17)
+                    {
+                        ligBonneJournee = "Bonne soirée.";
+                    }
 
                     mail.From = new MailAddress(utils.ReadSetting("emailAgence"), "Hifi International");
                     //mail.To.Add(emailToSend);
@@ -343,8 +352,10 @@ namespace HifiTransferts.Forms
 
                         ligContact +
 
+                        ligBonneJournee + 
+
                         "Bonne journée.\n\n" +
-                        vendeur + "\n\n" +
+                        ti.ToTitleCase(vendeur.ToLower()) + "\n\n" +
                         utils.ReadSetting("nomAgence") + "\n" +
                         utils.ReadSetting("adresse1Agence") + "\n" +
                         utils.ReadSetting("adresse2Agence") + "\n" +
@@ -353,7 +364,7 @@ namespace HifiTransferts.Forms
                         "Fax. : " + utils.ReadSetting("faxAgence") + "\n" +
                         "Email : " + utils.ReadSetting("emailAgence") + "\n";
 
-                    mail.Body = bodyEmail.ToUpper();
+                    mail.Body = bodyEmail;
 
                     SmtpServer.Port = int.Parse(utils.ReadSetting("emailPort"));
                     SmtpServer.Host = utils.ReadSetting("emailSmtp");
