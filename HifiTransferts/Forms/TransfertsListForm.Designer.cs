@@ -35,6 +35,14 @@
             this.BtnEdit = new System.Windows.Forms.ToolStripButton();
             this.BtnDelete = new System.Windows.Forms.ToolStripButton();
             this.BtnSend = new System.Windows.Forms.ToolStripButton();
+            this.LblSearch = new System.Windows.Forms.Label();
+            this.TxtSearch = new System.Windows.Forms.TextBox();
+            this.DtpDebut = new System.Windows.Forms.DateTimePicker();
+            this.DtpFin = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.BtnSearch = new System.Windows.Forms.Button();
+            this.BtnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransferts)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -48,12 +56,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvTransferts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTransferts.Location = new System.Drawing.Point(0, 35);
+            this.dgvTransferts.Location = new System.Drawing.Point(0, 63);
             this.dgvTransferts.MultiSelect = false;
             this.dgvTransferts.Name = "dgvTransferts";
             this.dgvTransferts.ReadOnly = true;
             this.dgvTransferts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTransferts.Size = new System.Drawing.Size(813, 462);
+            this.dgvTransferts.Size = new System.Drawing.Size(813, 434);
             this.dgvTransferts.TabIndex = 0;
             // 
             // toolStrip1
@@ -105,15 +113,93 @@
             this.BtnSend.Size = new System.Drawing.Size(77, 28);
             this.BtnSend.Text = "Envoyer";
             // 
+            // LblSearch
+            // 
+            this.LblSearch.AutoSize = true;
+            this.LblSearch.Location = new System.Drawing.Point(4, 40);
+            this.LblSearch.Name = "LblSearch";
+            this.LblSearch.Size = new System.Drawing.Size(66, 13);
+            this.LblSearch.TabIndex = 2;
+            this.LblSearch.Text = "Recherche :";
+            // 
+            // TxtSearch
+            // 
+            this.TxtSearch.Location = new System.Drawing.Point(71, 37);
+            this.TxtSearch.Name = "TxtSearch";
+            this.TxtSearch.Size = new System.Drawing.Size(177, 20);
+            this.TxtSearch.TabIndex = 3;
+            // 
+            // DtpDebut
+            // 
+            this.DtpDebut.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpDebut.Location = new System.Drawing.Point(320, 37);
+            this.DtpDebut.Name = "DtpDebut";
+            this.DtpDebut.Size = new System.Drawing.Size(99, 20);
+            this.DtpDebut.TabIndex = 4;
+            // 
+            // DtpFin
+            // 
+            this.DtpFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpFin.Location = new System.Drawing.Point(480, 37);
+            this.DtpFin.Name = "DtpFin";
+            this.DtpFin.Size = new System.Drawing.Size(98, 20);
+            this.DtpFin.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(254, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Date début :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(433, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Date fin :";
+            // 
+            // BtnSearch
+            // 
+            this.BtnSearch.Location = new System.Drawing.Point(589, 36);
+            this.BtnSearch.Name = "BtnSearch";
+            this.BtnSearch.Size = new System.Drawing.Size(75, 23);
+            this.BtnSearch.TabIndex = 8;
+            this.BtnSearch.Text = "Chercher";
+            this.BtnSearch.UseVisualStyleBackColor = true;
+            this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            // 
+            // BtnReset
+            // 
+            this.BtnReset.Location = new System.Drawing.Point(670, 36);
+            this.BtnReset.Name = "BtnReset";
+            this.BtnReset.Size = new System.Drawing.Size(75, 23);
+            this.BtnReset.TabIndex = 9;
+            this.BtnReset.Text = "Annuler";
+            this.BtnReset.UseVisualStyleBackColor = true;
+            this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
+            // 
             // TransfertsListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(813, 497);
             this.ControlBox = false;
+            this.Controls.Add(this.BtnReset);
+            this.Controls.Add(this.BtnSearch);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.DtpFin);
+            this.Controls.Add(this.DtpDebut);
+            this.Controls.Add(this.TxtSearch);
+            this.Controls.Add(this.LblSearch);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dgvTransferts);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TransfertsListForm";
@@ -134,5 +220,13 @@
         private System.Windows.Forms.ToolStripButton BtnEdit;
         private System.Windows.Forms.ToolStripButton BtnDelete;
         private System.Windows.Forms.ToolStripButton BtnSend;
+        private System.Windows.Forms.Label LblSearch;
+        private System.Windows.Forms.TextBox TxtSearch;
+        private System.Windows.Forms.DateTimePicker DtpDebut;
+        private System.Windows.Forms.DateTimePicker DtpFin;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button BtnSearch;
+        private System.Windows.Forms.Button BtnReset;
     }
 }

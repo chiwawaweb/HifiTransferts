@@ -47,7 +47,7 @@ namespace HifiTransferts.DAL
             }
         }
 
-        public List<Transfert> Search(string keywords)
+        public List<Transfert> Search(string keywords, DateTime dateDebut, DateTime dateFin)
         {
             using (Context context = new Context())
             {
@@ -55,15 +55,18 @@ namespace HifiTransferts.DAL
                 {
                     var transferts = from b in context.Transferts
                                  orderby b.Id descending
-                                 /*
-                                 where (((b.InfoClient1.Contains(keywords)
-                                    || (b.InfoClient2.Contains(keywords))
-                                    || (b.InfoClient3.Contains(keywords))
-                                    || (b.InfoClient4.Contains(keywords)))
+                                 
+                                 where (((b.Client.Contains(keywords)
+                                    || (b.Articles.Contains(keywords))
+                                    || (b.Agence.Contains(keywords))
+                                    || (b.Contact.Contains(keywords))
+                                    || (b.NoteInterne.Contains(keywords))
+                                    || (b.Vendeur.Contains(keywords))
+                                    )
                                  && (b.Date >= dateDebut)
                                  && (b.Date <= dateFin))
-                                 || b.Numero.Equals(keywords))
-                                 */
+                                 )
+                                 
                                  select b;
                     return transferts.ToList();
                 }

@@ -21,6 +21,7 @@ namespace HifiTransferts.Forms
         public TransfertsListForm()
         {
             InitializeComponent();
+            DtpDebut.Value = DateTime.Now.AddMonths(-1);
         }
 
         private void TransfertsListForm_Load(object sender, EventArgs e)
@@ -144,7 +145,7 @@ namespace HifiTransferts.Forms
         public void RefreshData()
         {
             List<Transfert> list;
-            list = transfertProvider.Search(""); // à completer avec mots cles / dates
+            list = transfertProvider.Search(TxtSearch.Text, DtpDebut.Value, DtpFin.Value); // à completer avec mots cles / dates
 
             CreateTable(list, idRetour);
 
@@ -195,6 +196,35 @@ namespace HifiTransferts.Forms
                     RefreshData();
                 }
             }
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            SearchTransferts();
+        }
+
+        private void SearchTransferts()
+        {
+            List<Transfert> list;
+            DateTime dateDebut = Convert.ToDateTime(DtpDebut.Value.ToShortDateString());
+            DateTime dateFin = Convert.ToDateTime(DtpFin.Value.ToShortDateString());
+
+            list = transfertProvider.Search(TxtSearch.Text, dateDebut, dateFin);
+
+            CreateTable(list, idRetour);
+        }
+
+        private void SearchFieldsReset()
+        {
+            TxtSearch.Text = "";
+            DtpDebut.Value = DateTime.Now.AddMonths(-1);
+            DtpFin.Value = DateTime.Now;
+            SearchTransferts();
+        }
+
+        private void BtnReset_Click(object sender, EventArgs e)
+        {
+            SearchFieldsReset();
         }
     }
 }

@@ -220,7 +220,6 @@ namespace HifiTransferts.Forms
 
                     Close();
                 }
-
             }
         }
 
@@ -263,7 +262,6 @@ namespace HifiTransferts.Forms
         {
             Transfert transfert = transfertProvider.GetTransfertById(_id);
 
-            //transfert.Date = date;
             transfert.Vendeur = vendeur;
             if (stock == true)
             {
