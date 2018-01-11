@@ -226,5 +226,10 @@ namespace HifiTransferts.Forms
         {
             SearchFieldsReset();
         }
+
+        private void dgvTransferts_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            EditTransfert();
+        }
     }
 }

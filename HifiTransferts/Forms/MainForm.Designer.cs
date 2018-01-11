@@ -45,10 +45,10 @@
             // statusStrip
             // 
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.statusStrip.Location = new System.Drawing.Point(0, 792);
+            this.statusStrip.Location = new System.Drawing.Point(0, 798);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Padding = new System.Windows.Forms.Padding(2, 0, 14, 0);
-            this.statusStrip.Size = new System.Drawing.Size(1083, 28);
+            this.statusStrip.Size = new System.Drawing.Size(1083, 22);
             this.statusStrip.SizingGrip = false;
             this.statusStrip.TabIndex = 1;
             // 
@@ -77,18 +77,19 @@
             // paramètresToolStripMenuItem
             // 
             this.paramètresToolStripMenuItem.Name = "paramètresToolStripMenuItem";
-            this.paramètresToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.paramètresToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.paramètresToolStripMenuItem.Text = "Paramètres ";
+            this.paramètresToolStripMenuItem.Click += new System.EventHandler(this.paramètresToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(185, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(207, 6);
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.quitterToolStripMenuItem.Text = "Quitter";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
