@@ -56,13 +56,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvTransferts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTransferts.Location = new System.Drawing.Point(0, 97);
-            this.dgvTransferts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvTransferts.Location = new System.Drawing.Point(0, 63);
             this.dgvTransferts.MultiSelect = false;
             this.dgvTransferts.Name = "dgvTransferts";
             this.dgvTransferts.ReadOnly = true;
             this.dgvTransferts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTransferts.Size = new System.Drawing.Size(1220, 668);
+            this.dgvTransferts.Size = new System.Drawing.Size(813, 434);
             this.dgvTransferts.TabIndex = 0;
             this.dgvTransferts.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTransferts_CellContentDoubleClick);
             // 
@@ -76,8 +75,7 @@
             this.BtnSend});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(1220, 32);
+            this.toolStrip1.Size = new System.Drawing.Size(813, 31);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -86,7 +84,7 @@
             this.BtnAdd.Image = ((System.Drawing.Image)(resources.GetObject("BtnAdd.Image")));
             this.BtnAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BtnAdd.Name = "BtnAdd";
-            this.BtnAdd.Size = new System.Drawing.Size(219, 29);
+            this.BtnAdd.Size = new System.Drawing.Size(154, 28);
             this.BtnAdd.Text = "Demander un transfert";
             this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
@@ -95,7 +93,7 @@
             this.BtnEdit.Image = ((System.Drawing.Image)(resources.GetObject("BtnEdit.Image")));
             this.BtnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BtnEdit.Name = "BtnEdit";
-            this.BtnEdit.Size = new System.Drawing.Size(107, 29);
+            this.BtnEdit.Size = new System.Drawing.Size(80, 28);
             this.BtnEdit.Text = "Modifier";
             this.BtnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
@@ -104,7 +102,7 @@
             this.BtnDelete.Image = ((System.Drawing.Image)(resources.GetObject("BtnDelete.Image")));
             this.BtnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BtnDelete.Name = "BtnDelete";
-            this.BtnDelete.Size = new System.Drawing.Size(123, 29);
+            this.BtnDelete.Size = new System.Drawing.Size(90, 28);
             this.BtnDelete.Text = "Supprimer";
             this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
@@ -113,71 +111,64 @@
             this.BtnSend.Image = ((System.Drawing.Image)(resources.GetObject("BtnSend.Image")));
             this.BtnSend.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BtnSend.Name = "BtnSend";
-            this.BtnSend.Size = new System.Drawing.Size(103, 29);
+            this.BtnSend.Size = new System.Drawing.Size(77, 28);
             this.BtnSend.Text = "Envoyer";
             // 
             // LblSearch
             // 
             this.LblSearch.AutoSize = true;
-            this.LblSearch.Location = new System.Drawing.Point(6, 62);
-            this.LblSearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblSearch.Location = new System.Drawing.Point(4, 40);
             this.LblSearch.Name = "LblSearch";
-            this.LblSearch.Size = new System.Drawing.Size(95, 20);
+            this.LblSearch.Size = new System.Drawing.Size(66, 13);
             this.LblSearch.TabIndex = 2;
             this.LblSearch.Text = "Recherche :";
             // 
             // TxtSearch
             // 
-            this.TxtSearch.Location = new System.Drawing.Point(106, 57);
-            this.TxtSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtSearch.Location = new System.Drawing.Point(71, 37);
             this.TxtSearch.Name = "TxtSearch";
-            this.TxtSearch.Size = new System.Drawing.Size(264, 26);
+            this.TxtSearch.Size = new System.Drawing.Size(177, 20);
             this.TxtSearch.TabIndex = 3;
             // 
             // DtpDebut
             // 
             this.DtpDebut.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtpDebut.Location = new System.Drawing.Point(480, 57);
-            this.DtpDebut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DtpDebut.Location = new System.Drawing.Point(320, 37);
             this.DtpDebut.Name = "DtpDebut";
-            this.DtpDebut.Size = new System.Drawing.Size(146, 26);
+            this.DtpDebut.Size = new System.Drawing.Size(99, 20);
             this.DtpDebut.TabIndex = 4;
             // 
             // DtpFin
             // 
             this.DtpFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtpFin.Location = new System.Drawing.Point(720, 57);
-            this.DtpFin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DtpFin.Location = new System.Drawing.Point(484, 37);
             this.DtpFin.Name = "DtpFin";
-            this.DtpFin.Size = new System.Drawing.Size(145, 26);
+            this.DtpFin.Size = new System.Drawing.Size(98, 20);
             this.DtpFin.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(381, 62);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(254, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 20);
+            this.label1.Size = new System.Drawing.Size(66, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "Date début :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(650, 62);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(433, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 20);
+            this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Date fin :";
             // 
             // BtnSearch
             // 
-            this.BtnSearch.Location = new System.Drawing.Point(884, 55);
-            this.BtnSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnSearch.Location = new System.Drawing.Point(589, 36);
             this.BtnSearch.Name = "BtnSearch";
-            this.BtnSearch.Size = new System.Drawing.Size(112, 35);
+            this.BtnSearch.Size = new System.Drawing.Size(75, 23);
             this.BtnSearch.TabIndex = 8;
             this.BtnSearch.Text = "Chercher";
             this.BtnSearch.UseVisualStyleBackColor = true;
@@ -185,10 +176,9 @@
             // 
             // BtnReset
             // 
-            this.BtnReset.Location = new System.Drawing.Point(1005, 55);
-            this.BtnReset.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnReset.Location = new System.Drawing.Point(670, 36);
             this.BtnReset.Name = "BtnReset";
-            this.BtnReset.Size = new System.Drawing.Size(112, 35);
+            this.BtnReset.Size = new System.Drawing.Size(75, 23);
             this.BtnReset.TabIndex = 9;
             this.BtnReset.Text = "Annuler";
             this.BtnReset.UseVisualStyleBackColor = true;
@@ -196,9 +186,9 @@
             // 
             // TransfertsListForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1220, 765);
+            this.ClientSize = new System.Drawing.Size(813, 497);
             this.ControlBox = false;
             this.Controls.Add(this.BtnReset);
             this.Controls.Add(this.BtnSearch);
@@ -210,6 +200,7 @@
             this.Controls.Add(this.LblSearch);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dgvTransferts);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TransfertsListForm";
