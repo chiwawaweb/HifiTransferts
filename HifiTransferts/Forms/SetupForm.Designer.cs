@@ -50,16 +50,16 @@
             this.TxtTelAgence = new System.Windows.Forms.TextBox();
             this.TxtFaxAgence = new System.Windows.Forms.TextBox();
             this.TxtEmailAgence = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtDbPath = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TxtEmailSmtp = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.TxtEmailPort = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.TxtEmailUser = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.TxtEmailPassword = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.TabControl.SuspendLayout();
@@ -110,15 +110,15 @@
             // TapSystem
             // 
             this.TapSystem.Controls.Add(this.textBox6);
-            this.TapSystem.Controls.Add(this.textBox5);
+            this.TapSystem.Controls.Add(this.TxtEmailPassword);
             this.TapSystem.Controls.Add(this.label14);
-            this.TapSystem.Controls.Add(this.textBox4);
+            this.TapSystem.Controls.Add(this.TxtEmailUser);
             this.TapSystem.Controls.Add(this.label13);
-            this.TapSystem.Controls.Add(this.textBox3);
+            this.TapSystem.Controls.Add(this.TxtEmailPort);
             this.TapSystem.Controls.Add(this.label12);
-            this.TapSystem.Controls.Add(this.textBox2);
+            this.TapSystem.Controls.Add(this.TxtEmailSmtp);
             this.TapSystem.Controls.Add(this.label11);
-            this.TapSystem.Controls.Add(this.textBox1);
+            this.TapSystem.Controls.Add(this.TxtDbPath);
             this.TapSystem.Controls.Add(this.label9);
             this.TapSystem.Controls.Add(this.label10);
             this.TapSystem.Location = new System.Drawing.Point(4, 22);
@@ -149,6 +149,7 @@
             this.BtnCancel.TabIndex = 2;
             this.BtnCancel.Text = "Annuler";
             this.BtnCancel.UseVisualStyleBackColor = true;
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // label1
             // 
@@ -288,13 +289,12 @@
             this.TxtEmailAgence.Size = new System.Drawing.Size(161, 20);
             this.TxtEmailAgence.TabIndex = 16;
             // 
-            // textBox1
+            // TxtDbPath
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(105, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(161, 20);
-            this.textBox1.TabIndex = 8;
+            this.TxtDbPath.Location = new System.Drawing.Point(105, 28);
+            this.TxtDbPath.Name = "TxtDbPath";
+            this.TxtDbPath.Size = new System.Drawing.Size(161, 20);
+            this.TxtDbPath.TabIndex = 8;
             // 
             // label9
             // 
@@ -315,13 +315,12 @@
             this.label10.TabIndex = 6;
             this.label10.Text = "Configuration système :";
             // 
-            // textBox2
+            // TxtEmailSmtp
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(105, 58);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(161, 20);
-            this.textBox2.TabIndex = 10;
+            this.TxtEmailSmtp.Location = new System.Drawing.Point(105, 58);
+            this.TxtEmailSmtp.Name = "TxtEmailSmtp";
+            this.TxtEmailSmtp.Size = new System.Drawing.Size(161, 20);
+            this.TxtEmailSmtp.TabIndex = 10;
             // 
             // label11
             // 
@@ -332,14 +331,13 @@
             this.label11.TabIndex = 9;
             this.label11.Text = "SMTP :";
             // 
-            // textBox3
+            // TxtEmailPort
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(105, 88);
-            this.textBox3.MaxLength = 5;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(37, 20);
-            this.textBox3.TabIndex = 12;
+            this.TxtEmailPort.Location = new System.Drawing.Point(105, 88);
+            this.TxtEmailPort.MaxLength = 5;
+            this.TxtEmailPort.Name = "TxtEmailPort";
+            this.TxtEmailPort.Size = new System.Drawing.Size(37, 20);
+            this.TxtEmailPort.TabIndex = 12;
             // 
             // label12
             // 
@@ -350,13 +348,12 @@
             this.label12.TabIndex = 11;
             this.label12.Text = "Port :";
             // 
-            // textBox4
+            // TxtEmailUser
             // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(105, 118);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(161, 20);
-            this.textBox4.TabIndex = 14;
+            this.TxtEmailUser.Location = new System.Drawing.Point(105, 118);
+            this.TxtEmailUser.Name = "TxtEmailUser";
+            this.TxtEmailUser.Size = new System.Drawing.Size(161, 20);
+            this.TxtEmailUser.TabIndex = 14;
             // 
             // label13
             // 
@@ -367,13 +364,13 @@
             this.label13.TabIndex = 13;
             this.label13.Text = "User :";
             // 
-            // textBox5
+            // TxtEmailPassword
             // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(105, 148);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(161, 20);
-            this.textBox5.TabIndex = 16;
+            this.TxtEmailPassword.Location = new System.Drawing.Point(105, 148);
+            this.TxtEmailPassword.Name = "TxtEmailPassword";
+            this.TxtEmailPassword.Size = new System.Drawing.Size(161, 20);
+            this.TxtEmailPassword.TabIndex = 16;
+            this.TxtEmailPassword.UseSystemPasswordChar = true;
             // 
             // label14
             // 
@@ -387,12 +384,12 @@
             // textBox6
             // 
             this.textBox6.BackColor = System.Drawing.SystemColors.Info;
-            this.textBox6.Enabled = false;
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox6.ForeColor = System.Drawing.Color.Red;
             this.textBox6.Location = new System.Drawing.Point(26, 193);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(240, 48);
             this.textBox6.TabIndex = 17;
             this.textBox6.Text = "Attention ! Toute modification sur cette page peut entraîner de graves dysfonctio" +
@@ -444,15 +441,15 @@
         private System.Windows.Forms.TextBox TxtAdr2Agence;
         private System.Windows.Forms.TextBox TxtAdr1Agence;
         private System.Windows.Forms.TextBox TxtNomAgence;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox TxtEmailPassword;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox TxtEmailUser;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox TxtEmailPort;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TxtEmailSmtp;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtDbPath;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox6;
