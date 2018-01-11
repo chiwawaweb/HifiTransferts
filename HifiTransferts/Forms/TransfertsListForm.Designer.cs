@@ -113,6 +113,7 @@
             this.BtnSend.Name = "BtnSend";
             this.BtnSend.Size = new System.Drawing.Size(77, 28);
             this.BtnSend.Text = "Envoyer";
+            this.BtnSend.Click += new System.EventHandler(this.BtnSend_Click);
             // 
             // LblSearch
             // 

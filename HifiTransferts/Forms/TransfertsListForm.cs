@@ -231,5 +231,13 @@ namespace HifiTransferts.Forms
         {
             EditTransfert();
         }
+
+        private void BtnSend_Click(object sender, EventArgs e)
+        {
+            /* Test si déjà envoyé */
+            var sended = dgvTransferts.CurrentRow.Cells[8].Value;
+
+            MessageBox.Show(sended.ToString());
+        }
     }
 }
