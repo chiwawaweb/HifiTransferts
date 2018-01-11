@@ -50,8 +50,21 @@
             this.TxtTelAgence = new System.Windows.Forms.TextBox();
             this.TxtFaxAgence = new System.Windows.Forms.TextBox();
             this.TxtEmailAgence = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.TabControl.SuspendLayout();
             this.TapAgence.SuspendLayout();
+            this.TapSystem.SuspendLayout();
             this.SuspendLayout();
             // 
             // TabControl
@@ -96,11 +109,23 @@
             // 
             // TapSystem
             // 
+            this.TapSystem.Controls.Add(this.textBox6);
+            this.TapSystem.Controls.Add(this.textBox5);
+            this.TapSystem.Controls.Add(this.label14);
+            this.TapSystem.Controls.Add(this.textBox4);
+            this.TapSystem.Controls.Add(this.label13);
+            this.TapSystem.Controls.Add(this.textBox3);
+            this.TapSystem.Controls.Add(this.label12);
+            this.TapSystem.Controls.Add(this.textBox2);
+            this.TapSystem.Controls.Add(this.label11);
+            this.TapSystem.Controls.Add(this.textBox1);
+            this.TapSystem.Controls.Add(this.label9);
+            this.TapSystem.Controls.Add(this.label10);
             this.TapSystem.Location = new System.Drawing.Point(4, 22);
             this.TapSystem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TapSystem.Name = "TapSystem";
             this.TapSystem.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.TapSystem.Size = new System.Drawing.Size(292, 192);
+            this.TapSystem.Size = new System.Drawing.Size(292, 268);
             this.TapSystem.TabIndex = 1;
             this.TapSystem.Text = "Système";
             this.TapSystem.UseVisualStyleBackColor = true;
@@ -263,6 +288,117 @@
             this.TxtEmailAgence.Size = new System.Drawing.Size(161, 20);
             this.TxtEmailAgence.TabIndex = 16;
             // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(105, 28);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(161, 20);
+            this.textBox1.TabIndex = 8;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(23, 30);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(66, 13);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Chemin BD :";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(6, 6);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(139, 13);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "Configuration système :";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(105, 58);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(161, 20);
+            this.textBox2.TabIndex = 10;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(23, 60);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(43, 13);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "SMTP :";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Enabled = false;
+            this.textBox3.Location = new System.Drawing.Point(105, 88);
+            this.textBox3.MaxLength = 5;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(37, 20);
+            this.textBox3.TabIndex = 12;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(23, 90);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(32, 13);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Port :";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Enabled = false;
+            this.textBox4.Location = new System.Drawing.Point(105, 118);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(161, 20);
+            this.textBox4.TabIndex = 14;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(23, 120);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(35, 13);
+            this.label13.TabIndex = 13;
+            this.label13.Text = "User :";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Enabled = false;
+            this.textBox5.Location = new System.Drawing.Point(105, 148);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(161, 20);
+            this.textBox5.TabIndex = 16;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(23, 150);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(59, 13);
+            this.label14.TabIndex = 15;
+            this.label14.Text = "Password :";
+            // 
+            // textBox6
+            // 
+            this.textBox6.BackColor = System.Drawing.SystemColors.Info;
+            this.textBox6.Enabled = false;
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.ForeColor = System.Drawing.Color.Red;
+            this.textBox6.Location = new System.Drawing.Point(26, 193);
+            this.textBox6.Multiline = true;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(240, 48);
+            this.textBox6.TabIndex = 17;
+            this.textBox6.Text = "Attention ! Toute modification sur cette page peut entraîner de graves dysfonctio" +
+    "nnements de l\'application !!!";
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // SetupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -278,6 +414,8 @@
             this.TabControl.ResumeLayout(false);
             this.TapAgence.ResumeLayout(false);
             this.TapAgence.PerformLayout();
+            this.TapSystem.ResumeLayout(false);
+            this.TapSystem.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -306,5 +444,17 @@
         private System.Windows.Forms.TextBox TxtAdr2Agence;
         private System.Windows.Forms.TextBox TxtAdr1Agence;
         private System.Windows.Forms.TextBox TxtNomAgence;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }
