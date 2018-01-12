@@ -234,10 +234,36 @@ namespace HifiTransferts.Forms
 
         private void BtnSend_Click(object sender, EventArgs e)
         {
-            /* Test si déjà envoyé */
-            var sended = dgvTransferts.CurrentRow.Cells[8].Value;
+            if (dgvTransferts.RowCount > 0)
+            {
+                /* Test si déjà envoyé */
+                bool sended = Convert.ToBoolean(dgvTransferts.CurrentRow.Cells[8].Value);
+                string warningMsg;
+                MessageBoxIcon msgboxicon;
 
-            MessageBox.Show(sended.ToString());
+                if (sended == true)
+                {
+                    /* Demande déjà envoyée */
+                    warningMsg = "La demande a déjà été envoyée. Voulez-vous vraiment la renvoyer ?";
+                    msgboxicon = MessageBoxIcon.Warning;
+                }
+                else
+                {
+                    /* Demande non envoyée */
+                    warningMsg = "Voulez-vous envoyer cette demande maintenant ?";
+                    msgboxicon = MessageBoxIcon.Question;
+                }
+
+                DialogResult result = MessageBox.Show(warningMsg, "Confirmation d'envoi", MessageBoxButtons.YesNo, msgboxicon);
+                if (result == DialogResult.Yes)
+                {
+                    int ID = int.Parse(dgvTransferts.CurrentRow.Cells[0].Value.ToString());
+                    //transfertProvider.Delete(new Transfert { Id = ID });
+                    //RefreshData();
+                }
+            }
+
+            
         }
     }
 }

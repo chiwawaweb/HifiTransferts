@@ -43,7 +43,7 @@ namespace HifiTransferts.Forms
 
         private void paramètresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SetupForm setupForm = new SetupForm();
+            SetupForm setupForm = new SetupForm(this);
             setupForm.ShowDialog();
         }
     }

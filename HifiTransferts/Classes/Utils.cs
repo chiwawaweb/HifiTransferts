@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 using System.Net.Mail;
+using System.Windows.Forms;
 
 namespace HifiTransferts.Classes
 {
@@ -85,6 +86,17 @@ namespace HifiTransferts.Classes
             {
                 return false;
             }
+        }
+
+        /// <summary>
+        /// N'accepte que la saisie de chiffres, sans aucune décimale.
+        /// </summary>
+        /// <param name="e"></param>
+        public void ChiffreOnly(KeyPressEventArgs e)
+        {
+
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+                e.Handled = true;
         }
     }
 }
