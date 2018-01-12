@@ -30,6 +30,7 @@ namespace HifiTransferts.Classes
                 new Agence { Numero=39, Nom="MASSEN", Email="hifi39@hifi.lu",Actif=true},
                 new Agence { Numero=40, Nom="FOETZ", Email="hifi40@hifi.lu",Actif=true},
                 new Agence { Numero=41, Nom="INGELDORF", Email="hifi41@hifi.lu",Actif=true}
+                // Ajouter ici une nouvelle agence et mettre à "false" le champ Actif d'une agence fermée.
             };
 
             return agences;

@@ -154,7 +154,7 @@ namespace HifiTransferts.Forms
 
         private void SetupForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //_owner.RefreshForm();
+            _owner.RefreshForm();
         }
     }
 }

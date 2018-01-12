@@ -39,16 +39,22 @@
             this.miseÀJourToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.aProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TsslVersion = new System.Windows.Forms.ToolStripStatusLabel();
+            this.TsslAgence = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip
             // 
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.statusStrip.Location = new System.Drawing.Point(0, 798);
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TsslVersion,
+            this.TsslAgence});
+            this.statusStrip.Location = new System.Drawing.Point(0, 790);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Padding = new System.Windows.Forms.Padding(2, 0, 14, 0);
-            this.statusStrip.Size = new System.Drawing.Size(1083, 22);
+            this.statusStrip.Size = new System.Drawing.Size(1083, 30);
             this.statusStrip.SizingGrip = false;
             this.statusStrip.TabIndex = 1;
             // 
@@ -77,19 +83,19 @@
             // paramètresToolStripMenuItem
             // 
             this.paramètresToolStripMenuItem.Name = "paramètresToolStripMenuItem";
-            this.paramètresToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.paramètresToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.paramètresToolStripMenuItem.Text = "Paramètres ";
             this.paramètresToolStripMenuItem.Click += new System.EventHandler(this.paramètresToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(207, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(185, 6);
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.quitterToolStripMenuItem.Text = "Quitter";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
@@ -106,19 +112,32 @@
             // miseÀJourToolStripMenuItem
             // 
             this.miseÀJourToolStripMenuItem.Name = "miseÀJourToolStripMenuItem";
-            this.miseÀJourToolStripMenuItem.Size = new System.Drawing.Size(195, 30);
+            this.miseÀJourToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.miseÀJourToolStripMenuItem.Text = "Mise à jour...";
+            this.miseÀJourToolStripMenuItem.Click += new System.EventHandler(this.miseÀJourToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(192, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(207, 6);
             // 
             // aProposToolStripMenuItem
             // 
             this.aProposToolStripMenuItem.Name = "aProposToolStripMenuItem";
-            this.aProposToolStripMenuItem.Size = new System.Drawing.Size(195, 30);
+            this.aProposToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.aProposToolStripMenuItem.Text = "A propos";
+            // 
+            // TsslVersion
+            // 
+            this.TsslVersion.Name = "TsslVersion";
+            this.TsslVersion.Size = new System.Drawing.Size(70, 25);
+            this.TsslVersion.Text = "Version";
+            // 
+            // TsslAgence
+            // 
+            this.TsslAgence.Name = "TsslAgence";
+            this.TsslAgence.Size = new System.Drawing.Size(71, 25);
+            this.TsslAgence.Text = "Agence";
             // 
             // MainForm
             // 
@@ -133,6 +152,9 @@
             this.Name = "MainForm";
             this.Text = "Hifi Transferts";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -151,5 +173,7 @@
         private System.Windows.Forms.ToolStripMenuItem miseÀJourToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem aProposToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel TsslVersion;
+        private System.Windows.Forms.ToolStripStatusLabel TsslAgence;
     }
 }
