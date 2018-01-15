@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.TsslVersion = new System.Windows.Forms.ToolStripStatusLabel();
+            this.TsslAgence = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paramètresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,8 +41,6 @@
             this.miseÀJourToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.aProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsslVersion = new System.Windows.Forms.ToolStripStatusLabel();
-            this.TsslAgence = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -51,12 +51,28 @@
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TsslVersion,
             this.TsslAgence});
-            this.statusStrip.Location = new System.Drawing.Point(0, 790);
+            this.statusStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.statusStrip.Location = new System.Drawing.Point(0, 513);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Padding = new System.Windows.Forms.Padding(2, 0, 14, 0);
-            this.statusStrip.Size = new System.Drawing.Size(1083, 30);
+            this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 9, 0);
+            this.statusStrip.Size = new System.Drawing.Size(722, 20);
             this.statusStrip.SizingGrip = false;
             this.statusStrip.TabIndex = 1;
+            // 
+            // TsslVersion
+            // 
+            this.TsslVersion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.TsslVersion.Name = "TsslVersion";
+            this.TsslVersion.Size = new System.Drawing.Size(46, 15);
+            this.TsslVersion.Text = "Version";
+            // 
+            // TsslAgence
+            // 
+            this.TsslAgence.Name = "TsslAgence";
+            this.TsslAgence.Size = new System.Drawing.Size(47, 15);
+            this.TsslAgence.Spring = true;
+            this.TsslAgence.Text = "Agence";
+            this.TsslAgence.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // menuStrip
             // 
@@ -66,7 +82,8 @@
             this.toolStripMenuItem1});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1083, 33);
+            this.menuStrip.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip.Size = new System.Drawing.Size(722, 24);
             this.menuStrip.TabIndex = 2;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -77,25 +94,25 @@
             this.toolStripMenuItem3,
             this.quitterToolStripMenuItem});
             this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
-            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(74, 29);
+            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(54, 22);
             this.fichierToolStripMenuItem.Text = "Fichier";
             // 
             // paramètresToolStripMenuItem
             // 
             this.paramètresToolStripMenuItem.Name = "paramètresToolStripMenuItem";
-            this.paramètresToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.paramètresToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.paramètresToolStripMenuItem.Text = "Paramètres ";
             this.paramètresToolStripMenuItem.Click += new System.EventHandler(this.paramètresToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(185, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(133, 6);
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.quitterToolStripMenuItem.Text = "Quitter";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
@@ -106,49 +123,38 @@
             this.toolStripMenuItem2,
             this.aProposToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(32, 29);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(24, 22);
             this.toolStripMenuItem1.Text = "?";
             // 
             // miseÀJourToolStripMenuItem
             // 
             this.miseÀJourToolStripMenuItem.Name = "miseÀJourToolStripMenuItem";
-            this.miseÀJourToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.miseÀJourToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.miseÀJourToolStripMenuItem.Text = "Mise à jour...";
             this.miseÀJourToolStripMenuItem.Click += new System.EventHandler(this.miseÀJourToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(207, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(138, 6);
             // 
             // aProposToolStripMenuItem
             // 
             this.aProposToolStripMenuItem.Name = "aProposToolStripMenuItem";
-            this.aProposToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.aProposToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.aProposToolStripMenuItem.Text = "A propos";
-            // 
-            // TsslVersion
-            // 
-            this.TsslVersion.Name = "TsslVersion";
-            this.TsslVersion.Size = new System.Drawing.Size(70, 25);
-            this.TsslVersion.Text = "Version";
-            // 
-            // TsslAgence
-            // 
-            this.TsslAgence.Name = "TsslAgence";
-            this.TsslAgence.Size = new System.Drawing.Size(71, 25);
-            this.TsslAgence.Text = "Agence";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1083, 820);
+            this.ClientSize = new System.Drawing.Size(722, 533);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainForm";
             this.Text = "Hifi Transferts";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
