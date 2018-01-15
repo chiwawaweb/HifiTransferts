@@ -134,6 +134,10 @@ namespace HifiTransferts.Forms
                 dgvTransferts.Rows[number].Cells[7].Value = remarque;
                 dgvTransferts.Rows[number].Cells[8].Value = envoye;
 
+                if (envoye == false)
+                {
+                    dgvTransferts.Rows[number].DefaultCellStyle.BackColor = Color.Yellow;
+                }
                 // pointe sur l'enregistrement courant
                 if (list[i].Id == idRetour)
                 {
