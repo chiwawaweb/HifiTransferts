@@ -269,5 +269,10 @@ namespace HifiTransferts.Forms
 
             
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
     }
 }

@@ -43,6 +43,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.BtnSearch = new System.Windows.Forms.Button();
             this.BtnReset = new System.Windows.Forms.Button();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransferts)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -73,7 +74,8 @@
             this.BtnAdd,
             this.BtnEdit,
             this.BtnDelete,
-            this.BtnSend});
+            this.BtnSend,
+            this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
@@ -196,6 +198,16 @@
             this.BtnReset.UseVisualStyleBackColor = true;
             this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(92, 29);
+            this.toolStripButton1.Text = "Actualiser";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // TransfertsListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -240,5 +252,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button BtnSearch;
         private System.Windows.Forms.Button BtnReset;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
