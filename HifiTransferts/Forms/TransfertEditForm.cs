@@ -31,7 +31,7 @@ namespace HifiTransferts.Forms
         DateTime date;
 
         TransfertsListForm _owner;
-        Transfert transfert;
+        //Transfert transfert;
         TransfertProvider transfertProvider = new TransfertProvider();
 
         public TransfertEditForm(TransfertsListForm owner, bool update, int id = 0)
@@ -178,7 +178,7 @@ namespace HifiTransferts.Forms
 
             /* Vérification des donnees */
             bool errors = false;
-            bool errVendeur, errArticles = false;
+            //bool errVendeur, errArticles = false;
             string errMsg = "Votre saisie comporte des erreurs : \n\n";
 
             if (vendeur.Length<2)
@@ -362,9 +362,9 @@ namespace HifiTransferts.Forms
 
 
                     mail.From = new MailAddress(utils.ReadSetting("emailAgence"), "Hifi International");
-                    //mail.To.Add(emailToSend);
-                    mail.To.Add("fredandroid76@gmail.com");
-                    //mail.CC.Add(utils.ReadSetting("emailAgence")); // Copie à l'agence
+                    mail.To.Add(emailToSend);
+                    //mail.To.Add("fredandroid76@gmail.com");
+                    mail.CC.Add(utils.ReadSetting("emailAgence")); // Copie à l'agence
                     mail.Subject = "Demande de transfert";
                     string bodyEmail = "Bonjour,\n\n" +
                         "Merci de tranférer le ou les articles suivants : \n\n" +
