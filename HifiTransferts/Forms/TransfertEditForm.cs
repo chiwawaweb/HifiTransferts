@@ -148,7 +148,11 @@ namespace HifiTransferts.Forms
 
         private void BtnSend_Click(object sender, EventArgs e)
         {
-            SaveTransfert(true);
+            DialogResult result = MessageBox.Show("Etes-vous certain de vouloir envoyer la demande ?", "Confirmation d'envoi", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                SaveTransfert(true);
+            }
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)

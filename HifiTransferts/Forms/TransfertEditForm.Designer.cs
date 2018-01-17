@@ -57,7 +57,7 @@
             this.CbxAgence.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxAgence.FormattingEnabled = true;
             this.CbxAgence.Location = new System.Drawing.Point(159, 24);
-            this.CbxAgence.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CbxAgence.Margin = new System.Windows.Forms.Padding(2);
             this.CbxAgence.Name = "CbxAgence";
             this.CbxAgence.Size = new System.Drawing.Size(138, 21);
             this.CbxAgence.TabIndex = 1;
@@ -66,7 +66,7 @@
             // 
             this.BtnSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSend.Location = new System.Drawing.Point(335, 365);
-            this.BtnSend.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnSend.Margin = new System.Windows.Forms.Padding(2);
             this.BtnSend.Name = "BtnSend";
             this.BtnSend.Size = new System.Drawing.Size(105, 25);
             this.BtnSend.TabIndex = 8;
@@ -78,7 +78,7 @@
             // BtnCancel
             // 
             this.BtnCancel.Location = new System.Drawing.Point(249, 365);
-            this.BtnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(82, 25);
             this.BtnCancel.TabIndex = 6;
@@ -91,7 +91,7 @@
             // 
             this.TxtMessage.AcceptsReturn = true;
             this.TxtMessage.Location = new System.Drawing.Point(16, 251);
-            this.TxtMessage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtMessage.Margin = new System.Windows.Forms.Padding(2);
             this.TxtMessage.Multiline = true;
             this.TxtMessage.Name = "TxtMessage";
             this.TxtMessage.Size = new System.Drawing.Size(425, 42);
@@ -109,7 +109,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 235);
+            this.label5.Location = new System.Drawing.Point(16, 235);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 13);
             this.label5.TabIndex = 13;
@@ -118,7 +118,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 9);
+            this.label6.Location = new System.Drawing.Point(16, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 13);
             this.label6.TabIndex = 15;
@@ -136,17 +136,17 @@
             // TxtContact
             // 
             this.TxtContact.Location = new System.Drawing.Point(301, 24);
-            this.TxtContact.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtContact.Margin = new System.Windows.Forms.Padding(2);
             this.TxtContact.Name = "TxtContact";
             this.TxtContact.Size = new System.Drawing.Size(140, 20);
             this.TxtContact.TabIndex = 2;
             // 
             // BtnSave
             // 
-            this.BtnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.BtnSave.ForeColor = System.Drawing.SystemColors.ControlText;
             this.BtnSave.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.BtnSave.Location = new System.Drawing.Point(16, 365);
-            this.BtnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnSave.Margin = new System.Windows.Forms.Padding(2);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(113, 25);
             this.BtnSave.TabIndex = 7;
@@ -158,7 +158,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 46);
+            this.label8.Location = new System.Drawing.Point(16, 46);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(33, 13);
             this.label8.TabIndex = 20;
@@ -166,8 +166,8 @@
             // 
             // TxtClient
             // 
-            this.TxtClient.Location = new System.Drawing.Point(15, 61);
-            this.TxtClient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtClient.Location = new System.Drawing.Point(16, 61);
+            this.TxtClient.Margin = new System.Windows.Forms.Padding(2);
             this.TxtClient.Name = "TxtClient";
             this.TxtClient.Size = new System.Drawing.Size(185, 20);
             this.TxtClient.TabIndex = 3;
@@ -176,7 +176,7 @@
             // 
             this.ChkStock.AutoSize = true;
             this.ChkStock.Location = new System.Drawing.Point(204, 63);
-            this.ChkStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ChkStock.Margin = new System.Windows.Forms.Padding(2);
             this.ChkStock.Name = "ChkStock";
             this.ChkStock.Size = new System.Drawing.Size(77, 17);
             this.ChkStock.TabIndex = 4;
@@ -189,8 +189,8 @@
             this.CbxVendeur.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.CbxVendeur.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CbxVendeur.FormattingEnabled = true;
-            this.CbxVendeur.Location = new System.Drawing.Point(15, 23);
-            this.CbxVendeur.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CbxVendeur.Location = new System.Drawing.Point(16, 23);
+            this.CbxVendeur.Margin = new System.Windows.Forms.Padding(2);
             this.CbxVendeur.Name = "CbxVendeur";
             this.CbxVendeur.Size = new System.Drawing.Size(138, 21);
             this.CbxVendeur.TabIndex = 0;
@@ -198,8 +198,8 @@
             // TxtArticles
             // 
             this.TxtArticles.AcceptsReturn = true;
-            this.TxtArticles.Location = new System.Drawing.Point(15, 113);
-            this.TxtArticles.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtArticles.Location = new System.Drawing.Point(16, 113);
+            this.TxtArticles.Margin = new System.Windows.Forms.Padding(2);
             this.TxtArticles.Multiline = true;
             this.TxtArticles.Name = "TxtArticles";
             this.TxtArticles.Size = new System.Drawing.Size(425, 114);
@@ -208,7 +208,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 98);
+            this.label1.Location = new System.Drawing.Point(16, 98);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 22;
@@ -217,7 +217,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 294);
+            this.label2.Location = new System.Drawing.Point(16, 294);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 13);
             this.label2.TabIndex = 24;
@@ -228,7 +228,7 @@
             this.TxtNoteInterne.AcceptsReturn = true;
             this.TxtNoteInterne.BackColor = System.Drawing.SystemColors.Info;
             this.TxtNoteInterne.Location = new System.Drawing.Point(16, 309);
-            this.TxtNoteInterne.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtNoteInterne.Margin = new System.Windows.Forms.Padding(2);
             this.TxtNoteInterne.Multiline = true;
             this.TxtNoteInterne.Name = "TxtNoteInterne";
             this.TxtNoteInterne.Size = new System.Drawing.Size(425, 42);
@@ -250,7 +250,7 @@
             this.TssSended.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TssSended.ForeColor = System.Drawing.Color.DarkRed;
             this.TssSended.Name = "TssSended";
-            this.TssSended.Size = new System.Drawing.Size(413, 17);
+            this.TssSended.Size = new System.Drawing.Size(444, 17);
             this.TssSended.Spring = true;
             this.TssSended.Text = "Attention ! Cette demande a déjà été envoyée !";
             this.TssSended.Visible = false;
@@ -280,7 +280,7 @@
             this.Controls.Add(this.BtnSend);
             this.Controls.Add(this.CbxAgence);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TransfertEditForm";
