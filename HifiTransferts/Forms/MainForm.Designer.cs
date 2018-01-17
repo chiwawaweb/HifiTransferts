@@ -51,11 +51,10 @@
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TsslVersion,
             this.TsslAgence});
-            this.statusStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.statusStrip.Location = new System.Drawing.Point(0, 513);
+            this.statusStrip.Location = new System.Drawing.Point(0, 511);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 9, 0);
-            this.statusStrip.Size = new System.Drawing.Size(722, 20);
+            this.statusStrip.Size = new System.Drawing.Size(722, 22);
             this.statusStrip.SizingGrip = false;
             this.statusStrip.TabIndex = 1;
             // 
@@ -63,15 +62,16 @@
             // 
             this.TsslVersion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.TsslVersion.Name = "TsslVersion";
-            this.TsslVersion.Size = new System.Drawing.Size(46, 15);
-            this.TsslVersion.Text = "Version";
+            this.TsslVersion.Size = new System.Drawing.Size(12, 17);
+            this.TsslVersion.Text = "-";
             // 
             // TsslAgence
             // 
+            this.TsslAgence.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.TsslAgence.Name = "TsslAgence";
-            this.TsslAgence.Size = new System.Drawing.Size(47, 15);
+            this.TsslAgence.Size = new System.Drawing.Size(669, 17);
             this.TsslAgence.Spring = true;
-            this.TsslAgence.Text = "Agence";
+            this.TsslAgence.Text = "-";
             this.TsslAgence.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // menuStrip
@@ -129,20 +129,21 @@
             // miseÀJourToolStripMenuItem
             // 
             this.miseÀJourToolStripMenuItem.Name = "miseÀJourToolStripMenuItem";
-            this.miseÀJourToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.miseÀJourToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.miseÀJourToolStripMenuItem.Text = "Mise à jour...";
             this.miseÀJourToolStripMenuItem.Click += new System.EventHandler(this.miseÀJourToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(138, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(149, 6);
             // 
             // aProposToolStripMenuItem
             // 
             this.aProposToolStripMenuItem.Name = "aProposToolStripMenuItem";
-            this.aProposToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.aProposToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aProposToolStripMenuItem.Text = "A propos";
+            this.aProposToolStripMenuItem.Click += new System.EventHandler(this.aProposToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -154,7 +155,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.Text = "Hifi Transferts";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

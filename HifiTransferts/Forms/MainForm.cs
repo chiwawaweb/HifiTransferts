@@ -151,5 +151,11 @@ namespace HifiTransferts.Forms
         {
             RefreshForm();
         }
+
+        private void aProposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutForm frm = new AboutForm();
+            frm.ShowDialog();
+        }
     }
 }
