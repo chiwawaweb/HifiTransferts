@@ -188,7 +188,7 @@ namespace HifiTransferts.Forms
             if (vendeur.Length<2)
             {
                 errors = true;
-                errMsg = "- Vendeur non spécifié\n";
+                errMsg += "- Vendeur non spécifié\n";
             }
 
             if (articles.Length<2)
@@ -200,7 +200,7 @@ namespace HifiTransferts.Forms
             if (errors == true)
             {
                 /* Erreurs dans la saisie */
-                MessageBox.Show("" + errMsg,"Erreur(s) dans la saisie",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show(errMsg, "Erreur(s) dans la saisie",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else
             {
