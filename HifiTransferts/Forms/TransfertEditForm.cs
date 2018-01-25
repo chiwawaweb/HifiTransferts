@@ -31,7 +31,7 @@ namespace HifiTransferts.Forms
         DateTime date;
 
         TransfertsListForm _owner;
-        //Transfert transfert;
+        Transfert transfert;
         TransfertProvider transfertProvider = new TransfertProvider();
 
         public TransfertEditForm(TransfertsListForm owner, bool update, int id = 0)
@@ -149,7 +149,7 @@ namespace HifiTransferts.Forms
         private void BtnSend_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Etes-vous certain de vouloir envoyer la demande ?", "Confirmation d'envoi", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            if (result == DialogResult.OK)
             {
                 SaveTransfert(true);
             }
@@ -179,6 +179,8 @@ namespace HifiTransferts.Forms
             articles = utils.RemoveDiacritics(TxtArticles.Text.ToUpper().Trim());
             remarque = TxtMessage.Text.Trim();
             noteInterne = TxtNoteInterne.Text.Trim();
+
+            
 
             /* Vérification des donnees */
             bool errors = false;
@@ -363,7 +365,6 @@ namespace HifiTransferts.Forms
                     {
                         ligBonneJournee = "Bonne nuit.";
                     }
-
 
                     mail.From = new MailAddress(utils.ReadSetting("emailAgence"), "Hifi International");
                     mail.To.Add(emailToSend);
